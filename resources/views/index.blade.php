@@ -11,7 +11,7 @@
                         class="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse">
                     </div>
                     <div class="container mx-auto px-6 text-center z-10">
-                        <h2 class="text-7xl md:text-9xl font-orbitron font-black mb-8">
+                        <h2 class="text-6xl md:text-8xl font-orbitron font-black mb-8">
                             <span
                                 class="bg-clip-text text-transparent bg-linear-to-r from-purple-400 via-fuchsia-500 to-cyan-400">
                                 XenonStor
