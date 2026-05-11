@@ -72,6 +72,32 @@
                 </div>
             </div>
 
+            {{-- Slide 4 --}}
+            <div class="swiper-slide flex items-center justify-center">
+                <div class="relative min-h-[90vh] flex items-center justify-center w-full overflow-hidden">
+                    {{-- Glow Effect --}}
+                    <div
+                        class="absolute bottom-0 right-0 w-137.5 h-137.5 bg-emerald-500/20 rounded-full blur-[140px] animate-pulse">
+                    </div>
+                    <div
+                        class="absolute top-10 left-10 w-72 h-72 bg-teal-400/10 rounded-full blur-[100px] animate-pulse delay-700">
+                    </div>
+                    {{-- Content --}}
+                    <div class="text-center z-10">
+                        <h2 class="text-6xl md:text-8xl font-black text-white font-orbitron">
+                            AI <span class="text-emerald-400">Vision</span>
+                        </h2>
+                        <p class="text-lg text-slate-400 mt-6 mb-10">
+                            اشتراكات ChatGPT Plus و Gemini و Claude AI بأسعار خرافية
+                        </p>
+                        <a href="#ai"
+                            class="px-10 py-3 border-2 border-emerald-400 text-emerald-400 font-black hover:bg-emerald-400 hover:text-white rounded-2xl transition duration-300">
+                            اكتشف الذكاء الاصطناعي
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </x-home-slider>
     </section>
 
