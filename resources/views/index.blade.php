@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <section id="home" class="relative">
-        {{-- home SLIDER --}}
+        {{-- HOME SLIDER --}}
         <x-home-slider>
 
             {{-- Slide 1 --}}
