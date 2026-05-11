@@ -37,7 +37,7 @@
                         class="absolute top-1/4 -left-20 w-96 h-96 bg-purple-500/30 rounded-full blur-[120px] animate-pulse">
                     </div>
                     <div class="text-center z-10">
-                        <h2 class="text-6xl md:text-8xl font-black text-white font-orbitron">
+                        <h2 class="text-6xl md:text-8xl font-black text-white font-orbitron px-1">
                             Gaming <span class="text-cyan-500">Cards</span>
                         </h2>
                         <p class="text-lg text-slate-400 mt-6 mb-10">
@@ -87,7 +87,7 @@
                         <h2 class="text-6xl md:text-8xl font-black text-white font-orbitron">
                             AI <span class="text-emerald-400">Vision</span>
                         </h2>
-                        <p class="text-lg text-slate-400 mt-6 mb-10">
+                        <p class="text-lg text-slate-400 mt-6 mb-10 px-4">
                             اشتراكات ChatGPT Plus و Gemini و Claude AI بأسعار خرافية
                         </p>
                         <a href="#ai"
