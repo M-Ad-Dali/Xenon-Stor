@@ -98,6 +98,33 @@
                 </div>
             </div>
 
+            {{-- Slide 5 --}}
+            <div class="swiper-slide flex items-center justify-center">
+                <div class="relative min-h-[90vh] flex items-center justify-center w-full overflow-hidden">
+                    {{-- Glow Effect --}}
+                    <div
+                        class="absolute -bottom-20 left-0 w-140 h-140 bg-orange-600/20 rounded-full blur-[150px] animate-pulse">
+                    </div>
+
+                    <div
+                        class="absolute -bottom-10 right-10 w-80 h-80 bg-red-600/20 rounded-full blur-[120px] animate-pulse delay-500">
+                    </div>
+                    {{-- Content --}}
+                    <div class="text-center z-10">
+                        <h2 class="text-6xl md:text-8xl font-black text-white font-orbitron">
+                            Premium <span class="text-orange-400">Apps</span>
+                        </h2>
+                        <p class="text-lg text-slate-300 mt-6 mb-10 px-4">
+                            اشتراكات ويندوز الأصلية وبرامج Adobe و Microsoft Office بأسعار مميزة
+                        </p>
+                        <a href="#software"
+                            class="px-10 py-3 border-2 border-orange-400 text-orange-400 font-black hover:bg-orange-400 hover:text-white rounded-2xl transition duration-300">
+                            اكتشف البرامج
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </x-home-slider>
     </section>
 
