@@ -1,11 +1,12 @@
-// 1. الفحص الأولي الفوري عند تحميل الملف لمنع وميض الشاشة
+// 1. الفحص الأولي الفوري عند تحميل الملف لمنع وميض الشاشة (الوضع الداكن هو الافتراضي للزائر الجديد)
 const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    document.documentElement.classList.add('dark');
-} else {
+// إذا كان المستخدم قد اختار الوضع المضيء صراحةً سابقاً، نقوم بإزالتها
+if (savedTheme === 'light') {
     document.documentElement.classList.remove('dark');
+} else {
+    // في حال كان جديداً (الذاكرة فارغة) أو اختار الداكن بنفسه، يتفعل الوضع الداكن تلقائياً
+    document.documentElement.classList.add('dark');
 }
 
 // 2. تحديث حركة الأزرار في الـ Dropdown بناءً على الثيم الحالي عند فتح القائمة
