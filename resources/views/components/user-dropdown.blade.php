@@ -21,7 +21,7 @@
         x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95"
         x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-        class="absolute z-160 mt-2 p-5 w-70 max-w-[85vw] bg-white/85 dark:bg-slate-900/95 backdrop-blur-2xl rounded-4xl shadow-2xl border border-white/40 dark:border-slate-700/50 {{ app()->getLocale() == 'ar' ? 'ltr:origin-top-left rtl:origin-top-right start-0' : 'ltr:origin-top-right rtl:origin-top-left end-0' }}">
+        class="absolute z-160 mt-2 p-5 w-70 max-w-[85vw] bg-white/85 dark:bg-slate-900/95 backdrop-blur-2xl rounded-4xl shadow-2xl border border-white/40 dark:border-slate-700/50 {{ app()->getLocale() == 'ar' ? 'ltr:origin-top-left rtl:origin-top-right inset-s-0' : 'ltr:origin-top-right rtl:origin-top-left inset-e-0' }}">
 
         {{-- أ. قسم المستخدم أو أزرار الدخول --}}
         <div class="text-center mb-5">

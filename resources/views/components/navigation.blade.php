@@ -26,9 +26,10 @@
                 </div>
             </div>
 
-            <!-- حقل البحث الخاص بالشاشات الكبيرة مدمج بسلاسة بجانب القائمة -->
+            {{-- Search Input --}}
             <x-search-input class="w-60 xl:w-100 hidden md:block" />
 
+            {{-- Mobile menu button --}}
             <div class="flex items-center gap-2 ">
                 <div class="md:hidden flex items-center">
                     <button @click="open = ! open" 
