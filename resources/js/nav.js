@@ -1,80 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const links = document.querySelectorAll('[data-nav]');
     const sections = document.querySelectorAll('section[id]');
 
-    /* Clear active class from all links */
-    function clearActive() {
-        links.forEach(l => l.classList.remove('active'));
-    }
+    // دالة ذكية لتفعيل الرابط النشط وإلغاء البقية بأسطر أقل
+    const setActive = (id) => {
+        links.forEach(link => {
+            const isActive = link.getAttribute('href') === `#${id}`;
+            link.classList.toggle('active', isActive);
+        });
+    };
 
-    /* Set active class on a specific link */
-    function setActive(link) {
-        clearActive();
-        link.classList.add('active');
-    }
-
-    /* Add click event listeners to all links */
+    // 1. إدارة الضغط والتمرير السلس للقسم
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-
-            // لو الرابط hash لا نمنع السلوك
-            setActive(link);
-
+            const targetId = link.getAttribute('href');
+            if (targetId?.startsWith('#')) {
+                e.preventDefault();
+                document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                setActive(targetId.substring(1));
+            }
         });
     });
 
-    /* Set the initial active link based on the URL hash */
-    function setInitialActive() {
+    // 2. الـ Scroll Spy الحديث البديل لكود الحسابات القديم (Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // إذا كان القسم ظاهراً بنسبة 50% أو أكثر في الشاشة
+            if (entry.isIntersecting) {
+                setActive(entry.target.id);
+            }
+        });
+    }, { rootMargin: '-30% 0px -60% 0px' }); // تحديد منطقة الرؤية وسط الشاشة بدقة
 
-        /* Get the URL hash */
-        const hash = window.location.hash;
+    sections.forEach(section => observer.observe(section));
 
-        /* If no hash is present, set the home link as active */
-        if (!hash) {
-            document.querySelector('[href="/"]')?.classList.add('active');
-            return;
-        }
-
-        /* Find the active link based on the hash */
-        const activeLink = document.querySelector(`[href="${hash}"]`);
-
-        /* If an active link is found, set it as active */
-        if (activeLink) {
-            setActive(activeLink);
-        }
+    // 3. تفعيل رابط الهوم الافتراضي عند بداية التحميل إذا لم يكن هناك Hash
+    if (!window.location.hash) {
+        (document.querySelector('[href="/"]') || document.querySelector('[href="#home"]'))?.classList.add('active');
     }
-
-    /* Set the initial active link */
-    setInitialActive();
-
-    /* Scroll spy */
-    window.addEventListener('scroll', () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const offset = section.offsetTop - 150;
-
-            /* Check if the section is in view */
-            if (window.scrollY >= offset) {
-                current = section.id;
-            }
-
-        });
-
-        links.forEach(link => {
-
-            link.classList.remove('active');
-
-            /* Set the active class on the link corresponding to the current section */
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-
-        });
-
-    });
-
 });
