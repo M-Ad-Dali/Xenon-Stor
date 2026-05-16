@@ -11,7 +11,7 @@
                     </a>
                 </div>
 
-                <div class="hidden sm:flex sm:ms-10 gap-4">
+                <div class="hidden md:flex sm:ms-10 gap-4">
 
                     <x-nav-link href="#home" data-nav class="nav-link">
                         Home
@@ -29,7 +29,7 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <div class="sm:hidden flex items-center">
+                <div class="md:hidden flex items-center">
                     <button @click="open = ! open"
                         class="p-2 rounded-xl text-slate-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all">
                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@
 
     {{-- MOBILE MENU --}}
     <div x-show="open" x-transition.opacity.duration.300ms
-        class="sm:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t dark:border-white/5 shadow-inner">
+        class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t dark:border-white/5 shadow-inner">
 
         <div class="flex flex-col py-4">
 
