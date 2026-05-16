@@ -11,8 +11,7 @@
                     </a>
                 </div>
 
-                <div class="hidden md:flex sm:ms-10 gap-4">
-
+                <div class="hidden md:flex sm:ms-10">
                     <x-nav-link href="#home" data-nav class="nav-link">
                         Home
                     </x-nav-link>
@@ -24,9 +23,11 @@
                     <x-nav-link href="#gaming" data-nav class="nav-link">
                         Gaming
                     </x-nav-link>
-
                 </div>
             </div>
+
+            <!-- حقل البحث الخاص بالشاشات الكبيرة مدمج بسلاسة بجانب القائمة -->
+            <x-search-input class="w-60 xl:w-100 hidden md:block" />
 
             <div class="flex items-center gap-2">
                 <div class="md:hidden flex items-center">
@@ -145,6 +146,9 @@
         class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t dark:border-white/5 shadow-inner">
 
         <div class="flex flex-col py-4">
+
+            <!-- حقل البحث المخصص للموبايل مضاف بشكل أنيق في مقدمة القائمة التنسيقية -->
+            <x-search-input class="px-6 mb-4 w-full" />
 
             <a href="#home" data-nav class="nav-link py-4 text-center text-[13px] font-bold uppercase">
                 Home
