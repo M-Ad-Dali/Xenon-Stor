@@ -7,7 +7,7 @@
             </svg>
         </span>
         
-        <input type="search" placeholder="بحث..." 
+        <input type="search" placeholder="{{ __('بحث...') }}" 
             class="w-full py-2.5 ps-4 pe-10 text-xs font-semibold rounded-xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 dark:focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all duration-300 z-10">
             
     </div>

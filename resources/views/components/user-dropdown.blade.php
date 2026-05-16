@@ -1,4 +1,5 @@
-<div class="relative inline-block text-left self-center z-150" x-data="{ open: false }" @click.outside="open = false"
+{{-- تم إضافة منطق التايلوند الذكي rtl:text-right ltr:text-left لضمان اتجاه النصوص بدون تعديل يدوي --}}
+<div class="relative inline-block text-left self-center z-150 rtl:text-right ltr:text-left" x-data="{ open: false }" @click.outside="open = false"
     @close.stop="open = false">
 
     {{-- 1. زر التحكم المباشر (Trigger) --}}
@@ -17,7 +18,6 @@
     </button>
 
     {{-- 2. محتوى القائمة المنسدلة (Content) --}}
-    {{-- تعديل: تم جعل الخلفية bg-white صلبة ونقية في اللايت مود مع تعميق الظل shadow-2xl لإبراز الكرت فوق البدي --}}
     <div x-show="open" style="display: none;" @click.away="open = false" @click.stop.immediate
         x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95"
         x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
@@ -30,14 +30,16 @@
                 <p class="text-base font-black text-slate-800 dark:text-white truncate">{{ Auth::user()->name }}</p>
                 <p class="text-[10px] text-slate-500 font-bold opacity-70 mt-1">{{ Auth::user()->email }}</p>
             @else
-                <h3 class="text-[#a855f7] font-black text-lg mb-4">مرحباً بك!</h3>
+                <h3 class="text-[#a855f7] font-black text-lg mb-4">{{ __('مرحباً بك!') }}</h3>
                 <div class="flex flex-col gap-2 font-bold text-xs text-center">
-                    {{-- تعديل: تغيير الألوان المكتوبة بهيكس ثابت لتصبح متناسقة ومتجاوبة --}}
                     <a href=""
-                        class="py-2.5 bg-slate-800 text-white rounded-xl hover:bg-slate-700 active:scale-95 transition-all">دخول</a>
+                        class="py-2.5 bg-slate-800 text-white rounded-xl hover:bg-slate-700 active:scale-95 transition-all">
+                        {{ __('دخول') }}
+                    </a>
                     <a href=""
-                        class="py-2.5 bg-purple-600 text-white rounded-xl shadow-md shadow-purple-500/20 hover:bg-purple-700 active:scale-95 transition-all">حساب
-                        جديد</a>
+                        class="py-2.5 bg-purple-600 text-white rounded-xl shadow-md shadow-purple-500/20 hover:bg-purple-700 active:scale-95 transition-all">
+                        {{ __('حساب جديد') }}
+                    </a>
                 </div>
             @endauth
         </div>
@@ -47,21 +49,22 @@
         {{-- Control Settings --}}
         <div class="space-y-5">
             <div class="space-y-2">
-                <label class="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1">وضع العرض</label>
+                {{-- تم إضافة rtl:text-right ltr:text-left للعنوان الداخلي --}}
+                <label class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
+                    {{ __('وضع العرض') }}
+                </label>
 
-                {{-- التعديل هنا: تم إجبار المتصفح على تطبيق كلاس dark على وسم الـ html الأساسي فوراً وحفظ القيمة --}}
                 <div @click="darkMode = !darkMode; localStorage.setItem('theme', darkMode ? 'dark' : 'light'); document.documentElement.classList.toggle('dark', darkMode)"
                     class="relative w-full h-11 bg-slate-100 dark:bg-slate-800/60 rounded-xl p-1 flex items-center cursor-pointer border border-slate-200/60 dark:border-slate-700/50 group/theme">
 
                     {{-- الزر الخلفي المتحرك --}}
-                    {{-- تعديل: تم تبديل الأبيض بـ bg-slate-200 ليكون تباين المقبض واضحاً ومريحاً للعين في الفاتح --}}
                     <div class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 shadow-xs"
                         :class="darkMode ?
                             ('{{ app()->getLocale() }}' == 'ar' ? 'left-1 bg-purple-600' : 'right-1 bg-purple-600') :
                             ('{{ app()->getLocale() }}' == 'ar' ? 'right-1 bg-slate-200' : 'left-1 bg-slate-200')">
                     </div>
 
-                    {{-- الأيقونات مع الحفاظ على كلاس التفعيل pointer-events-auto الخاص بك --}}
+                    {{-- الأيقونات --}}
                     <div class="flex w-full z-10 font-bold text-lg text-center select-none pointer-events-auto">
                         <div id="light-mode-btn" class="flex-1 transition-transform group-hover/theme:scale-110"
                             :class="darkMode ? 'text-slate-400 dark:text-slate-500' : 'text-slate-800'">☀️</div>
@@ -72,7 +75,10 @@
             </div>
 
             <div class="space-y-2">
-                <label class="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1">اللغة</label>
+                {{-- تم إضافة rtl:text-right ltr:text-left لعنوان اللغة --}}
+                <label class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
+                    {{ __('اللغة') }}
+                </label>
                 <a href="{{ url('lang/' . (app()->getLocale() == 'ar' ? 'en' : 'ar')) }}"
                     class="relative w-full h-11 bg-slate-100 dark:bg-slate-800/60 rounded-xl p-1 flex items-center border border-slate-200/60 dark:border-slate-700/50 hover:border-purple-500/30 transition-colors group/lang">
 
@@ -84,11 +90,11 @@
                         class="flex w-full z-10 font-black text-[10px] text-center uppercase tracking-tight pointer-events-none select-none">
                         <div
                             class="flex-1 transition-all group-hover/lang:scale-110 {{ app()->getLocale() == 'ar' ? 'text-white' : 'text-slate-400' }}">
-                            العربية
+                            {{ __('العربية') }}
                         </div>
                         <div
                             class="flex-1 transition-all group-hover/lang:scale-110 {{ app()->getLocale() == 'en' ? 'text-white' : 'text-slate-400' }}">
-                            English
+                            {{ __('English') }}
                         </div>
                     </div>
                 </a>
@@ -101,8 +107,9 @@
                 <form method="POST" action="">
                     @csrf
                     <button type="submit"
-                        class="text-red-500 text-[11px] font-black uppercase tracking-widest hover:text-red-400 transition-all">تسجيل
-                        الخروج</button>
+                        class="text-red-500 text-[11px] font-black uppercase tracking-widest hover:text-red-400 transition-all">
+                        {{ __('تسجيل الخروج') }}
+                    </button>
                 </form>
             </div>
         @endauth

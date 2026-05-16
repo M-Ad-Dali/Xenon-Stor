@@ -1,4 +1,21 @@
 {
+    "_comment_1": "---------------- [1] شريط التنقل العلوي (Navbar) ----------------",
+    "الرئيسية": "Home",
+    "المنتجات": "Products",
+    "الألعاب": "Gaming",
+    "بحث...": "Search...",
+
+    "_comment_2": "---------------- [2] القائمة المنسدلة للمستخدم (User Dropdown) ----------------",
+    "مرحباً بك!": "Welcome!",
+    "دخول": "Login",
+    "حساب جديد": "Register",
+    "وضع العرض": "Display Mode",
+    "اللغة": "Language",
+    "العربية": "Arabic",
+    "English": "English",
+    "تسجيل الخروج": "Logout",
+
+    "_comment_3": "---------------- [3] الصفحة الرئيسية (Index Page) ----------------",
     "اكتشف المستقبل في تسوق المنتجات الرقمية": "Discover the future of digital products shopping",
     "بأمان تام وسرعة فائقة": "With total security and super speed",
     "من نحن": "About Us",
