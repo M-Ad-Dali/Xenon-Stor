@@ -1,46 +1,56 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-/* توجيهات مسارات الملفات */
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* مصادر الملفات (Content Sources) */
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
 
-/* 1. تكتل الثيم الموحد: يحتوي على جميع المتغيرات المخصصة المبتدئة بـ -- */
+/* ===== Theme (Tailwind v4 CSS-first config) ===== */
 @theme {
-    /* الخطوط */
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-cairo: 'Cairo', sans-serif;
-    --font-orbitron: 'Orbitron', sans-serif;
+    /* Fonts */
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 
-    /* الظلال */
-    --shadow-neon-purple: 0 0 20px rgba(168, 85, 247, 0.4);
+    --font-cairo: "Cairo", sans-serif;
+    --font-orbitron: "Orbitron", sans-serif;
 
-    /* الألوان المخصصة التي تستخدمها في التصميم (تمت إضافتها بنفس الطريقة) */
+    /* Colors */
     --color-brand-purple: #a855f7;
+
+    /* Shadows */
+    --shadow-neon-purple: 0 0 20px rgba(168, 85, 247, 0.4);
 }
 
-/* 2. الـ @variant يُكتب هنا بالخارج بشكل مستقل تماماً */
+/* Dark mode variant (Tailwind v4 style) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Prevent flicker */
+[x-cloak] {
+    display: none !important;
+}
 
-/* --- تخصيصات الـ CSS الإضافية الخاصة بالـ Swiper والـ Nav --- */
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
-/* Swiper Pagination */
+/* ===== Swiper ===== */
 .swiper-pagination-bullet {
-    /* استدعاء اللون من متغيرات الثيم الجديدة */
     background: var(--color-brand-purple) !important;
     opacity: 0.2;
 }
+
 .swiper-pagination-bullet-active {
     opacity: 1;
     width: 30px !important;
     border-radius: 999px;
 }
 
-/* Navigation Link */
+/* ===== Navigation ===== */
 .nav-link.active {
-    /* استدعاء اللون من متغيرات الثيم الجديدة */
     color: var(--color-brand-purple);
     font-weight: 800;
     position: relative;
@@ -54,7 +64,6 @@
     transform: translateX(-50%);
     width: 18px;
     height: 2px;
-    /* استدعاء اللون من متغيرات الثيم الجديدة */
     background: var(--color-brand-purple);
     border-radius: 999px;
 }
