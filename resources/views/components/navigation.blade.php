@@ -11,28 +11,29 @@
                     </a>
                 </div>
 
-                <div class="hidden md:flex sm:ms-10">
+                {{-- تم ضبط كلاسات المسافات والتباعد لتتوافق هندسياً مع إصدار v4 --}}
+                <div class="hidden md:flex items-center gap-x-6 sm:ms-10">
                     <x-nav-link href="#home" data-nav class="nav-link">
                         {{ __('الرئيسية') }}
                     </x-nav-link>
 
-                    <x-nav-link href="#products" data-nav class="nav-link">
-                        {{ __('المنتجات') }}
+                    <x-nav-link href="#services" data-nav class="nav-link">
+                        {{ __('الخدمات') }}
                     </x-nav-link>
 
-                    <x-nav-link href="#gaming" data-nav class="nav-link">
+                    <x-nav-link href="#playstation" data-nav class="nav-link">
                         {{ __('الألعاب') }}
                     </x-nav-link>
                 </div>
             </div>
 
             {{-- Search Input --}}
-            <x-search-input class="w-60 xl:w-100 hidden md:block" />
+            <x-search-input class="w-70 xl:w-100 hidden md:block" />
 
             {{-- Mobile menu button --}}
-            <div class="flex items-center gap-2 ">
+            <div class="flex items-center gap-2">
                 <div class="md:hidden flex items-center">
-                    <button @click="open = ! open" 
+                    <button @click="open = ! open"
                         class="p-2 rounded-xl text-slate-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             <path :class="{ 'hidden': open, 'inline-flex': !open }" stroke-linecap="round"
@@ -54,17 +55,15 @@
         x-transition:leave="transition ease-in duration-200 transform"
         x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4"
         class="md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-xl z-100 flex flex-col py-4 px-6 divide-y divide-slate-100 dark:divide-slate-800/60"
-        style="display: none;"
-        @click.outside="open = false">
+        style="display: none;" @click.outside="open = false">
 
         <x-search-input class="w-full pb-4" />
 
-        {{-- تم تعديل المصفوفة لتستقبل الدوال المترجمة تلقائياً في الموبايل --}}
         @foreach ([
-            '#home' => __('الرئيسية'),
-            '#products' => __('المنتجات'),
-            '#gaming' => __('الألعاب'),
-        ] as $url => $label)
+        '#home' => __('الرئيسية'),
+        '#services' => __('الخدمات الرقمية'),
+        '#playstation' => __('الألعاب'),
+    ]    as $url => $label)
             <a href="{{ $url }}" data-nav
                 class="nav-link py-3.5 text-center text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 active:scale-98 transition-all">
                 {{ $label }}
