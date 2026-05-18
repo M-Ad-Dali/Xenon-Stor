@@ -13,7 +13,7 @@
                     <div class="container mx-auto px-6 text-center z-10">
                         <h2 class="text-5xl md:text-7xl font-orbitron font-black mb-8">
                             <span
-                                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-fuchsia-500 to-cyan-500 dark:from-purple-400 dark:via-fuchsia-500 dark:to-cyan-400">
+                                class="bg-clip-text text-transparent bg-linear-to-r from-purple-600 via-fuchsia-500 to-cyan-500 dark:from-purple-400 dark:via-fuchsia-500 dark:to-cyan-400">
                                 XenonStor
                             </span>
                         </h2>

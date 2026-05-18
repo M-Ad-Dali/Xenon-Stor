@@ -53,7 +53,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5 max-w-6xl mx-auto justify-center py-16">
                 @foreach ($cards as $card)
                     <a href="#"
-                        class="{{ $baseCard }} hover:border-[var(--brand-color)]/50 dark:hover:border-[var(--brand-color)]/60 hover:shadow-[0_0_25px_var(--brand-color)]"
+                        class="{{ $baseCard }} hover:border-brand-purple/50 dark:hover:border-brand-purple/60 hover:shadow-[0_0_25px_var(--brand-color)]"
                         style="--brand-color: {{ $card['color'] }}; --tw-shadow-color: {{ $card['color'] }};">
                         <div class="flex items-center justify-center flex-1 w-full min-h-60px">
                             <img src="{{ $card['url'] }}" alt="{{ $card['sub_title'] }}"

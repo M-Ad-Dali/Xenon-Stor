@@ -16,13 +16,13 @@
 >
 
     {{-- Glow Effect --}}
-    <div class="absolute -inset-px bg-gradient-to-r from-purple-600 to-cyan-400 rounded-[1.8rem] opacity-0 group-hover:opacity-10 transition duration-500 pointer-events-none"></div>
+    <div class="absolute -inset-px bg-linear-to-r from-purple-600 to-cyan-400 rounded-[1.8rem] opacity-0 group-hover:opacity-10 transition duration-500 pointer-events-none"></div>
 
     {{-- Image --}}
     <div class="relative w-full aspect-square rounded-[1.4rem] overflow-hidden bg-slate-100 dark:bg-slate-950 mb-3 group-hover:scale-[1.02] transition-transform duration-300">
 
         @if(!empty($badge))
-            <span class="absolute top-2.5 start-2.5 z-10 py-0.5 px-2 bg-purple-600 text-white font-orbitron text-[8px] font-black tracking-wider rounded-md shadow-sm">
+            <span class="absolute top-2.5 inset-s-2.5 z-10 py-0.5 px-2 bg-purple-600 text-white font-orbitron text-[8px] font-black tracking-wider rounded-md shadow-sm">
                 {{ $badge }}
             </span>
         @endif
@@ -35,7 +35,7 @@
             class="w-full h-full object-cover group-hover:rotate-1 transition-transform duration-500"
         >
 
-        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
 
     {{-- Content --}}

@@ -30,7 +30,7 @@
                 <p class="text-base font-black text-slate-800 dark:text-white truncate">{{ Auth::user()->name }}</p>
                 <p class="text-[10px] text-slate-500 font-bold opacity-70 mt-1">{{ Auth::user()->email }}</p>
             @else
-                <h3 class="text-[#a855f7] font-black text-lg mb-4">{{ __('مرحباً بك!') }}</h3>
+                <h3 class="text-brand-purple font-black text-lg mb-4">{{ __('مرحباً بك!') }}</h3>
                 <div class="flex flex-col gap-2 font-bold text-xs text-center">
                     <a href=""
                         class="py-2.5 bg-slate-800 text-white rounded-xl hover:bg-slate-700 active:scale-95 transition-all">
@@ -86,7 +86,7 @@
                     class="relative w-full h-11 bg-slate-100 dark:bg-slate-800/60 rounded-xl p-1 flex items-center border border-slate-200/60 dark:border-slate-700/50 hover:border-purple-500/30 transition-colors group/lang">
 
                     <div
-                        class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-purple-600 rounded-lg transition-all duration-300 shadow-sm {{ app()->getLocale() == 'ar' ? 'start-1' : 'end-1' }}">
+                        class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-purple-600 rounded-lg transition-all duration-300 shadow-sm {{ app()->getLocale() == 'ar' ? 'inset-s-1' : 'inset-e-1' }}">
                     </div>
 
                     <div

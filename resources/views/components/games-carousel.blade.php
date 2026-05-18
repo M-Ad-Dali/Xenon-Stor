@@ -6,7 +6,7 @@
 ])
 
 <section id="{{ $id }}"
-    class="py-4 bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500 pt-10 md:pt-20 lg:scroll-mt-[85px] scroll-mt-[69px]"
+    class="py-4 bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500 pt-10 md:pt-20 lg:scroll-mt-21 scroll-mt-17"
     x-data="{
         scroll(direction) {
             const isRTL = document.documentElement.dir === 'rtl';
@@ -30,7 +30,7 @@
                 {{-- تظبيط حجم الخط ديناميكياً حسب اللغة: إذا كانت إنجليزية يصغر قليلاً على الهواتف منعاً للتداخل --}}
                 <h2 class="font-orbitron font-black text-slate-800 dark:text-white border-purple-600 
                     {{ app()->getLocale() == 'ar' ? 'text-xl sm:text-2xl md:text-4xl border-r-4 sm:border-r-8 pr-3 sm:pr-6' : 'text-base xs:text-lg sm:text-2xl md:text-4xl border-l-4 sm:border-l-8 pl-3 sm:pl-6' }} 
-                    leading-tight break-words">
+                    leading-tight wrap-break-word">
                     {{ $title }}
                 </h2>
                 <a href="{{ $viewAllUrl }}"
@@ -40,7 +40,7 @@
             </div>
 
             {{-- Dynamic Decorative Line --}}
-            <div class="hidden lg:block flex-1 h-0.5 {{ app()->getLocale() == 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r' }} from-purple-600/50 to-transparent"></div>
+            <div class="hidden lg:block flex-1 h-0.5 {{ app()->getLocale() == 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-purple-600/50 to-transparent"></div>
 
             {{-- Carousel Navigation Controls --}}
             <div class="flex items-center gap-1.5 md:gap-2 shrink-0">
@@ -63,17 +63,17 @@
 
         {{-- Carousel --}}
         <div x-ref="carousel"
-            class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-1 justify-start items-stretch [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-1 justify-start items-stretch scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             
             @if ($hasProducts)
                 @for ($i = 1; $i <= 4; $i++)
-                    <div class="snap-start shrink-0 w-[260px] xs:w-[290px] sm:w-[320px]">
+                    <div class="snap-start shrink-0 w-65 xs:w-[290px] sm:w-[320px]">
                         <x-product-card />
                     </div>
                 @endfor
             @else
                 <div class="w-full flex justify-center">
-                    <div class="w-full max-w-4xl p-8 md:p-20 text-center bg-slate-50 dark:bg-slate-900/40 border-2 border-dashed border-slate-300 dark:border-slate-800 rounded-[2rem] md:rounded-[3rem] backdrop-blur-md">
+                    <div class="w-full max-w-4xl p-8 md:p-20 text-center bg-slate-50 dark:bg-slate-900/40 border-2 border-dashed border-slate-300 dark:border-slate-800 rounded-3xl md:rounded-[3rem] backdrop-blur-md">
                         <span class="text-4xl md:text-6xl block mb-4 md:mb-6 animate-bounce">📦</span>
                         <p class="text-lg md:text-xl font-black text-slate-700 dark:text-slate-300 mb-1 md:mb-2">
                             {{ __('لا توجد منتجات حالياً') }}
