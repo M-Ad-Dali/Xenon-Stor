@@ -1,19 +1,19 @@
 <x-app-layout>
 
-    <section id="home" class="relative bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500">
+    <section class="relative bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500">
         {{-- HOME SLIDER --}}
         <x-home-slider>
 
             {{-- Slide 1 --}}
-            <div class="swiper-slide flex items-center justify-center ">
+            <div class="swiper-slide flex items-center justify-center">
                 <div class="relative min-h-[90vh] flex items-center justify-center w-full">
-                    {{-- تعديل التوهج: استخدام bg-cyan-500/25 في اللايت مود ليصبح مرئياً و 10% في الداكن --}}
-                    <div class="absolute bottom-1/4 w-96 h-96 bg-cyan-500/25 dark:bg-cyan-500/10 rounded-full blur-[100px] animate-pulse
-                        {{ app()->getLocale() == 'ar' ? '-right-20' : '-left-20' }}">
+                    <div
+                        class="absolute bottom-1/4 w-96 h-96 bg-cyan-500/25 dark:bg-cyan-500/10 rounded-full blur-[100px] animate-pulse {{ app()->getLocale() == 'ar' ? '-right-20' : '-left-20' }}">
                     </div>
                     <div class="container mx-auto px-6 text-center z-10">
                         <h2 class="text-5xl md:text-7xl font-orbitron font-black mb-8">
-                            <span class="bg-clip-text text-transparent bg-linear-to-r from-purple-600 via-fuchsia-500 to-cyan-500 dark:from-purple-400 dark:via-fuchsia-500 dark:to-cyan-400">
+                            <span
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-fuchsia-500 to-cyan-500 dark:from-purple-400 dark:via-fuchsia-500 dark:to-cyan-400">
                                 XenonStor
                             </span>
                         </h2>
@@ -33,9 +33,8 @@
             {{-- Slide 2 --}}
             <div class="swiper-slide flex items-center justify-center">
                 <div class="relative min-h-[90vh] flex items-center justify-center w-full">
-                    {{-- تعديل التوهج: استخدام bg-purple-500/25 في اللايت مود و 10% في الداكن --}}
-                    <div class="absolute top-1/4 w-96 h-96 bg-purple-500/25 dark:bg-purple-500/10 rounded-full blur-[100px] animate-pulse
-                        {{ app()->getLocale() == 'ar' ? '-left-20' : '-right-20' }}">
+                    <div
+                        class="absolute top-1/4 w-96 h-96 bg-purple-500/25 dark:bg-purple-500/10 rounded-full blur-[100px] animate-pulse {{ app()->getLocale() == 'ar' ? '-left-20' : '-right-20' }}">
                     </div>
                     <div class="text-center z-10">
                         <h2 class="text-5xl md:text-7xl font-black text-slate-800 dark:text-white font-orbitron px-1">
@@ -52,12 +51,11 @@
                 </div>
             </div>
 
-            {{-- Slide 3 (المعروضة في الصورة لديك) --}}
+            {{-- Slide 3 --}}
             <div class="swiper-slide flex items-center justify-center">
                 <div class="relative min-h-[90vh] flex items-center justify-center w-full">
-                    {{-- تعديل التوهج: استخدام bg-rose-500/25 في اللايت مود و 10% في الداكن مع تماسك الـ blur --}}
                     <div
-                        class="absolute top-1/2 left-1/2 w-125 h-125 -translate-x-1/2 -translate-y-1/2 bg-rose-500/25 dark:bg-rose-500/10 rounded-full blur-[100px] animate-pulse">
+                        class="absolute top-1/2 left-1/2 w-120 h-120 -translate-x-1/2 -translate-y-1/2 bg-rose-500/25 dark:bg-rose-500/10 rounded-full blur-[100px] animate-pulse">
                     </div>
                     <div class="text-center z-10">
                         <h2 class="text-5xl md:text-7xl font-black text-slate-800 dark:text-white font-orbitron">
@@ -77,14 +75,12 @@
             {{-- Slide 4 --}}
             <div class="swiper-slide flex items-center justify-center">
                 <div class="relative min-h-[90vh] flex items-center justify-center w-full overflow-hidden">
-                    {{-- تعديل التوهج السفلي والعلوي --}}
-                    <div class="absolute bottom-0 w-137.5 h-137.5 bg-emerald-500/25 dark:bg-emerald-500/10 rounded-full blur-[110px] animate-pulse
-                        {{ app()->getLocale() == 'ar' ? 'right-0' : 'left-0' }}">
+                    <div
+                        class="absolute bottom-0 w-130 h-130 bg-emerald-500/25 dark:bg-emerald-500/10 rounded-full blur-[110px] animate-pulse {{ app()->getLocale() == 'ar' ? 'right-0' : 'left-0' }}">
                     </div>
-                    <div class="absolute top-10 w-72 h-72 bg-teal-400/25 dark:bg-teal-400/10 rounded-full blur-[90px] animate-pulse delay-700
-                        {{ app()->getLocale() == 'ar' ? 'left-10' : 'right-10' }}">
+                    <div
+                        class="absolute top-10 w-72 h-72 bg-teal-400/25 dark:bg-teal-400/10 rounded-full blur-[90px] animate-pulse delay-700 {{ app()->getLocale() == 'ar' ? 'left-10' : 'right-10' }}">
                     </div>
-                    
                     <div class="text-center z-10">
                         <h2 class="text-5xl md:text-7xl font-black text-slate-800 dark:text-white font-orbitron">
                             AI <span class="text-emerald-600 dark:text-emerald-400">Vision</span>
@@ -103,14 +99,12 @@
             {{-- Slide 5 --}}
             <div class="swiper-slide flex items-center justify-center">
                 <div class="relative min-h-[90vh] flex items-center justify-center w-full overflow-hidden">
-                    {{-- تعديل توهج البرامج --}}
-                    <div class="absolute -bottom-20 w-140 h-140 bg-orange-600/25 dark:bg-orange-600/10 rounded-full blur-[110px] animate-pulse
-                        {{ app()->getLocale() == 'ar' ? 'left-0' : 'right-0' }}">
+                    <div
+                        class="absolute -bottom-20 w-140 h-140 bg-orange-600/25 dark:bg-orange-600/10 rounded-full blur-[110px] animate-pulse {{ app()->getLocale() == 'ar' ? 'left-0' : 'right-0' }}">
                     </div>
-                    <div class="absolute -bottom-10 w-80 h-80 bg-red-600/25 dark:bg-red-600/10 rounded-full blur-[90px] animate-pulse delay-500
-                        {{ app()->getLocale() == 'ar' ? 'right-10' : 'left-10' }}">
+                    <div
+                        class="absolute -bottom-10 w-80 h-80 bg-red-600/25 dark:bg-red-600/10 rounded-full blur-[90px] animate-pulse delay-500 {{ app()->getLocale() == 'ar' ? 'right-10' : 'left-10' }}">
                     </div>
-                    
                     <div class="text-center z-10">
                         <h2 class="text-5xl md:text-7xl font-black text-slate-800 dark:text-white font-orbitron">
                             Premium <span class="text-orange-600 dark:text-orange-400">Apps</span>
@@ -129,34 +123,16 @@
         </x-home-slider>
     </section>
 
-    {{-- PRODUCTS SECTION --}}
-    <section id="products" class="py-24 bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500">
-        <div class="container mx-auto px-6">
-            <div class="flex items-center justify-between mb-16 gap-6">
-                <h2 class="text-2xl md:text-4xl font-orbitron font-black text-slate-800 dark:text-white shrink-0 border-purple-600
-                    {{ app()->getLocale() == 'ar' ? 'border-r-8 pr-6' : 'border-l-8 pl-6' }}">
-                    {{ __('المنتجات المميزة') }}
-                </h2>
-                <div class="hidden md:block flex-1 h-0.5 bg-linear-to-{{ app()->getLocale() == 'ar' ? 'l' : 'r' }} from-purple-600/50 to-transparent"></div>
-            </div>
+    {{-- SERVICES & PLATFORMS SECTION --}}
+    <x-section-services />
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                @forelse($products ?? [] as $product)
-                    {{-- كروت المنتجات ستعرض هنا --}}
-                @empty
-                    <div
-                        class="col-span-full p-20 text-center bg-slate-50 dark:bg-slate-900/40 border-2 border-dashed border-slate-300 dark:border-slate-800 rounded-[3rem] backdrop-blur-md">
-                        <span class="text-6xl block mb-6 animate-bounce">📦</span>
-                        <p class="text-xl font-black text-slate-700 dark:text-slate-300 mb-2">
-                            {{ __('لا توجد منتجات حالياً') }}
-                        </p>
-                        <p class="text-slate-500 dark:text-slate-500 font-medium">
-                            {{ __('انتظرونا قريباً بأقوى العروض') }}
-                        </p>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </section>
+    {{-- PLAYSTATION SECTION --}}
+    <x-section-header :title="__('متجر الاشتراكات والألعاب')" :description="__('شحن فوري وآمن لجميع بطاقات الألعاب المفضلة لديك وبأرخص الأسعار.')" />
+    <x-games-carousel id="steam" :title="__('العاب منصة ستيم للحاسوب')" :hasProducts="false" />
+    <x-games-carousel id="playstation" :title="__('العاب بلايستيشن')" :hasProducts="true" />
+    <x-games-carousel id="xbox" :title="__('العاب إكس بوكس')" :hasProducts="false" />
+    <x-games-carousel id="windows" :title="__('اشتراكات ويندوز والبرامج')" :hasProducts="true" />
+    <x-games-carousel id="ai" :title="__('اشتراكات تطبيقات (AI)')" :hasProducts="false" />
+    <x-games-carousel id="video-games" :title="__('اشتراكات ألعاب الفيديو')" :hasProducts="true" />
 
 </x-app-layout>
