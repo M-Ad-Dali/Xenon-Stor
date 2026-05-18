@@ -1,11 +1,9 @@
 {
-    "_comment_1": "---------------- [1] شريط التنقل العلوي (Navbar) ----------------",
     "الرئيسية": "Home",
-    "المنتجات": "Products",
+    "الخدمات": "Services",
     "الألعاب": "Gaming",
     "بحث...": "Search...",
 
-    "_comment_2": "---------------- [2] القائمة المنسدلة للمستخدم (User Dropdown) ----------------",
     "مرحباً بك!": "Welcome!",
     "دخول": "Login",
     "حساب جديد": "Register",
@@ -15,7 +13,6 @@
     "English": "English",
     "تسجيل الخروج": "Logout",
 
-    "_comment_3": "---------------- [3] الصفحة الرئيسية (Index Page) ----------------",
     "اكتشف المستقبل في تسوق المنتجات الرقمية": "Discover the future of digital products shopping",
     "بأمان تام وسرعة فائقة": "With total security and super speed",
     "من نحن": "About Us",
@@ -27,7 +24,33 @@
     "اكتشف الذكاء الاصطناعي": "Discover AI Tools",
     "اشتراكات ويندوز الأصلية وبرامج Adobe و Microsoft Office بأسعار مميزة": "Original Windows keys, Adobe and Microsoft Office programs at special prices",
     "اكتشف البرامج": "Discover Software",
-    "المنتجات المميزة": "Featured Products",
     "لا توجد منتجات حالياً": "No products available currently",
-    "انتظرونا قريباً بأقوى العروض": "Stay tuned for our strongest offers soon"
+    "انتظرونا قريباً بأقوى العروض": "Stay tuned for our strongest offers soon",
+    "عرض الكل": "View All",
+
+    "الخدمات الرقمية": "Digital Services",
+    "نوفر لكم أفضل الخدمات الرقمية واشتراكات البرامج بأعلى معايير الجودة.": "We provide you with the best digital services and software subscriptions with the highest quality standards.",
+    "اشتراكات ويندوز والبرامج": "Windows & Software Subscriptions",
+    "اشتراكات تطبيقات (AI)": "AI Apps Subscriptions",
+    "العاب منصة ستيم للحاسوب": "Steam PC Games",
+    "اشتراكات ألعاب الفيديو": "Video Games Subscriptions",
+    "العاب إكس بوكس": "Xbox Games",
+    "العاب بلايستيشن": "PlayStation Games",
+
+    "متجر الاشتراكات والألعاب": "Subscriptions & Games Store",
+    "شحن فوري وآمن لجميع بطاقات الألعاب المفضلة لديك وبأرخص الأسعار.": "Instant and secure delivery for all your favorite gaming cards at the best prices.",
+    "المنتجات ": "Products",
+    "اكتشف عالم ليل المدينة المذهل مع حزمة الإضافات الرقمية الكاملة بأمان وسرعة.": "Discover the amazing Night City world with the complete digital bundle safely and quickly.",
+    "شراء الآن": "Buy Now",
+
+    "شحن فوري وآمن لجميع بطاقات الألعاب المفضلة لديك وبأرخص الأسعار. متجرك الأول لكل ما تحتاجه في عالم الجيمينج.": "Instant and secure top-up for all your favorite gaming cards at the best prices. Your premier store for everything you need in the gaming world.",
+    "تصفح الأقسام": "Browse Categories",
+    "الدعم الفني": "Technical Support",
+    "شروط الخدمة": "Terms of Service",
+    "سياسة الاسترجاع": "Refund Policy",
+    "الأسئلة الشائعة": "FAQs",
+    "تابعنا": "Follow Us",
+    "جميع الحقوق محفوظة.": "All rights reserved.",
+    "دفع آمن 100%": "100% Secure Payment",
+    "تسليم تلقائي وفوري": "Instant & Automatic Delivery"
 }
