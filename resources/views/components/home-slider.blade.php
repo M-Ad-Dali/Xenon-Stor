@@ -1,4 +1,4 @@
-<section class="relative min-h-[85vh] overflow-hidden group">
+<section id="home" class="relative min-h-[85vh] overflow-hidden group">
 
     <div class="swiper homeSwiper min-h-[85vh]">
 
