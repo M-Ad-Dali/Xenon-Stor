@@ -1,6 +1,6 @@
 {{-- تم إضافة منطق التايلوند الذكي rtl:text-right ltr:text-left لضمان اتجاه النصوص بدون تعديل يدوي --}}
-<div class="relative inline-block text-left self-center z-150 rtl:text-right ltr:text-left" x-data="{ open: false }" @click.outside="open = false"
-    @close.stop="open = false">
+<div class="relative inline-block text-left self-center z-150 rtl:text-right ltr:text-left" x-data="{ open: false }"
+    @click.outside="open = false" @close.stop="open = false">
 
     {{-- 1. زر التحكم المباشر (Trigger) --}}
     <button @click="open = ! open" type="button"
@@ -50,7 +50,8 @@
         <div class="space-y-5">
             <div class="space-y-2">
                 {{-- تم إضافة rtl:text-right ltr:text-left للعنوان الداخلي --}}
-                <label class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
+                <label
+                    class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
                     {{ __('وضع العرض') }}
                 </label>
 
@@ -61,13 +62,14 @@
                     <div class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 shadow-xs"
                         :class="darkMode ?
                             ('{{ app()->getLocale() }}' == 'ar' ? 'left-1 bg-purple-600' : 'right-1 bg-purple-600') :
-                            ('{{ app()->getLocale() }}' == 'ar' ? 'right-1 bg-slate-200' : 'left-1 bg-slate-200')">
+                            ('{{ app()->getLocale() }}' == 'ar' ? 'right-1 bg-purple-600' : 'left-1 bg-slate-200')">
                     </div>
 
                     {{-- الأيقونات --}}
                     <div class="flex w-full z-10 font-bold text-lg text-center select-none pointer-events-auto">
                         <div id="light-mode-btn" class="flex-1 transition-transform group-hover/theme:scale-110"
-                            :class="darkMode ? 'text-slate-400 dark:text-slate-500' : 'text-slate-800'">☀️</div>
+                            :class="darkMode ? 'text-slate-400 dark:text-slate-500' : 'text-slate-800'">☀️
+                        </div>
                         <div id="dark-mode-btn" class="flex-1 transition-transform group-hover/theme:scale-110"
                             :class="darkMode ? 'text-white' : 'text-slate-400'">🌙</div>
                     </div>
@@ -76,7 +78,8 @@
 
             <div class="space-y-2">
                 {{-- تم إضافة rtl:text-right ltr:text-left لعنوان اللغة --}}
-                <label class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
+                <label
+                    class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
                     {{ __('اللغة') }}
                 </label>
                 <a href="{{ url('lang/' . (app()->getLocale() == 'ar' ? 'en' : 'ar')) }}"
