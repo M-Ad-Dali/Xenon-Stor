@@ -46,10 +46,10 @@
         ];
     @endphp
 
-    <section id="services"
+    <section 
         class=" justify-center  bg-stone-50 dark:bg-[#030712] transition-colors duration-500 scroll-mt-20">
-        <x-section-header :title="__('الخدمات الرقمية')" :description="__('نوفر لكم أفضل الخدمات الرقمية واشتراكات البرامج بأعلى معايير الجودة.')" />
-        <div class="container mx-auto px-6 w-full">
+        <x-section-header id="services" :title="__('الخدمات الرقمية')" :description="__('نوفر لكم أفضل الخدمات الرقمية واشتراكات البرامج بأعلى معايير الجودة.')" />
+        <div id="servic" class="container mx-auto px-6 w-full">
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5 max-w-6xl mx-auto justify-center py-16">
                 @foreach ($cards as $card)
                     <a href="#"

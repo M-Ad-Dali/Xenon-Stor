@@ -12,7 +12,7 @@
                 </div>
 
                 {{-- تم ضبط كلاسات المسافات والتباعد لتتوافق هندسياً مع إصدار v4 --}}
-                <div class="hidden md:flex items-center gap-x-6 sm:ms-10">
+                <div class="hidden md:flex items-center gap-x-2 md:ms-6">
                     <x-nav-link href="#home" data-nav class="nav-link">
                         {{ __('الرئيسية') }}
                     </x-nav-link>
@@ -21,7 +21,7 @@
                         {{ __('الخدمات') }}
                     </x-nav-link>
 
-                    <x-nav-link href="#playstation" data-nav class="nav-link">
+                    <x-nav-link href="#gaming" data-nav class="nav-link">
                         {{ __('الألعاب') }}
                     </x-nav-link>
                 </div>
@@ -65,7 +65,7 @@
         @foreach ([
         '#home' => __('الرئيسية'),
         '#services' => __('الخدمات الرقمية'),
-        '#playstation' => __('الألعاب'),
+        '#gaming' => __('الألعاب'),
         ] as $url => $label)
             <a href="{{ $url }}" data-nav
                 class="nav-link py-3.5 text-center text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 active:scale-98 transition-all">
