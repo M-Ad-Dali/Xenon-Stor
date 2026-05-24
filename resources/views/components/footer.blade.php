@@ -1,6 +1,6 @@
 <footer class="bg-stone-100/80 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors duration-500">
-    <div class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 mt-8">
             
             {{-- العمود الأول: الهوية والوصف --}}
             <div class="md:col-span-1 space-y-4">
@@ -103,7 +103,7 @@
             <p>
                 &copy; {{ date('Y') }} <span class="font-orbitron font-black text-slate-700 dark:text-slate-300">XENONSTOR</span>. {{ __('جميع الحقوق محفوظة.') }}
             </p>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-6 mb-8">
                 <span class="flex items-center gap-1">🔒 {{ __('دفع آمن 100%') }}</span>
                 <span class="flex items-center gap-1">⚡ {{ __('تسليم تلقائي وفوري') }}</span>
             </div>
