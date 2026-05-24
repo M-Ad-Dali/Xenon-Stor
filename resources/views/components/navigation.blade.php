@@ -31,7 +31,10 @@
             <x-search-input class="w-70 xl:w-100 hidden md:block" />
 
             {{-- Mobile menu button --}}
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-4">
+                <a href="#cart" class="items-center text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                    <x-icon-cart classes="w-8 h-8 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition-colors cursor-pointer" />
+                </a>
                 <div class="md:hidden flex items-center">
                     <button @click="open = ! open"
                         class="p-2 rounded-xl text-slate-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
@@ -63,7 +66,7 @@
         '#home' => __('الرئيسية'),
         '#services' => __('الخدمات الرقمية'),
         '#playstation' => __('الألعاب'),
-    ]    as $url => $label)
+        ] as $url => $label)
             <a href="{{ $url }}" data-nav
                 class="nav-link py-3.5 text-center text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 active:scale-98 transition-all">
                 {{ $label }}
