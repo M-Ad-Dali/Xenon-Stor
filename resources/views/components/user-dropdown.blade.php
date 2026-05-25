@@ -59,10 +59,10 @@
                     class="relative w-full h-11 bg-slate-100 dark:bg-slate-800/60 rounded-xl p-1 flex items-center cursor-pointer border border-slate-200/60 dark:border-slate-700/50 group/theme">
 
                     {{-- الزر الخلفي المتحرك --}}
-                    <div class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 shadow-xs"
+                    <div class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 shadow-xs bg-purple-600"
                         :class="darkMode ?
-                            ('{{ app()->getLocale() }}' == 'ar' ? 'left-1 bg-purple-600' : 'right-1 bg-purple-600') :
-                            ('{{ app()->getLocale() }}' == 'ar' ? 'right-1 bg-purple-600' : 'left-1 bg-slate-200')">
+                            ('{{ app()->getLocale() }}' == 'ar' ? 'left-1' : 'right-1') :
+                            ('{{ app()->getLocale() }}' == 'ar' ? 'right-1' : 'left-1')">
                     </div>
 
                     {{-- الأيقونات --}}
