@@ -26,18 +26,22 @@
         <div class="flex items-center justify-between mb-6 md:mb-12 gap-3 md:gap-4">
             {{-- Title & View All --}}
             {{-- تم تعديل المحاذاة هنا لتصبح items-center على الشاشات الصغيرة لتناسب النص الإنجليزي الطويل --}}
-            <div class="flex items-center gap-3 md:gap-6 shrink-0 max-w-[70%] sm:max-w-none">
-                {{-- تظبيط حجم الخط ديناميكياً حسب اللغة: إذا كانت إنجليزية يصغر قليلاً على الهواتف منعاً للتداخل --}}
-                <h2 class="font-orbitron font-black text-slate-800 dark:text-white border-purple-600 
-                    {{ app()->getLocale() == 'ar' ? 'text-xl sm:text-2xl md:text-4xl border-r-4 sm:border-r-8 pr-3 sm:pr-6' : 'text-base xs:text-lg sm:text-2xl md:text-4xl border-l-4 sm:border-l-8 pl-3 sm:pl-6' }} 
-                    leading-tight wrap-break-word">
-                    {{ $title }}
-                </h2>
-                <a href="{{ $viewAllUrl }}"
-                    class="text-[11px] md:text-sm font-black text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 pb-0.5 border-b-2 border-purple-600/60 dark:border-purple-400/60 hover:border-purple-700 dark:hover:border-purple-300 transition-all shrink-0">
-                    {{ __('عرض الكل') }}
-                </a>
-            </div>
+            <div class="flex items-center justify-between gap-3 md:gap-6 w-full">
+    
+    {{-- عنوان القسم --}}
+    <h2 class="font-orbitron font-black text-slate-800 dark:text-white border-purple-600 flex-1 min-w-0 line-clamp-2
+        {{ app()->getLocale() == 'ar' ? 'text-xl sm:text-2xl md:text-4xl border-r-4 sm:border-r-8 pr-3 sm:pr-6' : 'text-base xs:text-lg sm:text-2xl md:text-4xl border-l-4 sm:border-l-8 pl-3 sm:pl-6' }} 
+        leading-tight break-words">
+        {{ $title }}
+    </h2>
+    
+    {{-- زر عرض الكل --}}
+    <a href="{{ $viewAllUrl }}"
+        class="text-[11px] md:text-sm font-black text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 pb-0.5 border-b-2 border-purple-600/60 dark:border-purple-400/60 hover:border-purple-700 dark:hover:border-purple-300 transition-all shrink-0">
+        {{ __('عرض الكل') }}
+    </a>
+
+</div>
 
             {{-- Dynamic Decorative Line --}}
             <div class="hidden lg:block flex-1 h-0.5 {{ app()->getLocale() == 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-purple-600/50 to-transparent"></div>
