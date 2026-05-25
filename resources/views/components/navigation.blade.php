@@ -28,7 +28,7 @@
             </div>
 
             {{-- Search Input --}}
-            <x-search-input class="w-70 xl:w-100 hidden md:block" />
+            <x-search-input class="w-70 xl:w-100 hidden md:block mx-4" />
 
             {{-- Mobile menu button --}}
             <div class="flex items-center gap-4">
