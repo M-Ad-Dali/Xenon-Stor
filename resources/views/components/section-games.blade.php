@@ -31,7 +31,7 @@
     {{-- عنوان القسم --}}
     <h2 class="font-orbitron font-black text-slate-800 dark:text-white border-purple-600 flex-1 min-w-0 line-clamp-2
         {{ app()->getLocale() == 'ar' ? 'text-xl sm:text-2xl md:text-4xl border-r-4 sm:border-r-8 pr-3 sm:pr-6' : 'text-base xs:text-lg sm:text-2xl md:text-4xl border-l-4 sm:border-l-8 pl-3 sm:pl-6' }} 
-        leading-tight break-words">
+        leading-tight wrap-break-word">
         {{ $title }}
     </h2>
     
