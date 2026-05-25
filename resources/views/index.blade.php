@@ -17,7 +17,7 @@
     <x-section-games id="steam" :title="__('العاب منصة ستيم للحاسوب')" :hasProducts="false" />
     <x-section-games id="playstation" :title="__('العاب بلايستيشن')" :hasProducts="true" />
     <x-section-games id="xbox" :title="__('العاب إكس بوكس')" :hasProducts="false" />
-    <x-section-games id="windows" :title="__('اشتراكات ويندوز والبرامج')" :hasProducts="true" />
+    <x-section-games id="video-games" :title="__('اشتراكات ويندوز والبرامج')" :hasProducts="true" />
     <x-section-games id="ai" :title="__('اشتراكات تطبيقات (AI)')" :hasProducts="false" />
     <x-section-games id="video-games" :title="__('اشتراكات ألعاب الفيديو')" :hasProducts="true" />
 
