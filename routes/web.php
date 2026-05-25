@@ -18,6 +18,10 @@ Route::get('lang/{locale}', function ($locale) {
     return redirect()->back();
 });
 
+Route::get('/categories', function () {
+    return view('categories'); // اسم ملف الـ Blade الذي أنشأناه
+})->name('categories.index');
+
 Route::get('/login', function () {
     return view('login');
 });
