@@ -1,5 +1,6 @@
 <x-app-layout>
 
+
     <section class="relative bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500">
         {{-- HOME SLIDER --}}
         <x-home-slider>
@@ -8,7 +9,9 @@
     </section>
 
     {{-- SERVICES & PLATFORMS SECTION --}}
-    <section class="bg-violet-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-violet-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             {{-- العنوان --}}
             <x-section-header id="services" :title="__('الخدمات الرقمية')" :description="__('نوفر لكم أفضل الخدمات الرقمية واشتراكات البرامج بأعلى معايير الجودة.')" />
 
@@ -16,6 +19,8 @@
             <div class="mt-12">
                 <x-section-services />
             </div>
+        </div>
+
     </section>
 
     {{-- PLAYSTATION SECTION --}}
