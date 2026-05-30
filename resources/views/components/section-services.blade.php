@@ -53,7 +53,7 @@
     ];
 @endphp
 
-    <section class="justify-center bg-stone-50 dark:bg-[#030712] transition-colors duration-500 scroll-mt-20">
+    <section class="justify-center  dark:bg-[#030712] transition-colors duration-500 scroll-mt-20">
         <div id="servic" class="container mx-auto px-6 w-full">
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 max-w-6xl mx-auto justify-center py-16">

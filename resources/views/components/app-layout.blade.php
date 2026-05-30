@@ -38,7 +38,7 @@
 </head>
 
 <body
-    class="font-cairo antialiased bg-neutral-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500"
+    class="font-cairo antialiased bg-white/80 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500"
     x-cloak>
 
     <div class="min-h-screen flex flex-col justify-between">
@@ -53,7 +53,9 @@
 
     </div>
 
-    <x-footer />
+    <div class="bg-violet-50">
+        <x-footer />
+    </div>
 
 </body>
 

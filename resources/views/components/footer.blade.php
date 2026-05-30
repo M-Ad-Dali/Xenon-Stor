@@ -1,5 +1,5 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <footer class="bg-stone-100/80 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors duration-500">
+    <footer class=" dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors duration-500">
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 mt-8 text-center md:text-start">
 

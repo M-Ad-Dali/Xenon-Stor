@@ -6,7 +6,7 @@
 ])
 
 <section id="{{ $id }}"
-    class="py-4 bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500 pt-10 md:pt-20 lg:scroll-mt-21 scroll-mt-17"
+    class="py-4 dark:bg-slate-950 transition-colors duration-500 pt-10 md:pt-20 lg:scroll-mt-21 scroll-mt-17"
     x-data="{
         scroll(direction) {
             const isRTL = document.documentElement.dir === 'rtl';
