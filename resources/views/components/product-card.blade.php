@@ -14,7 +14,7 @@
 
     {{-- كارد المنتج الأساسي --}}
     <div @click="bubbleOpen = true"
-        class="group relative bg-white dark:bg-slate-900/60 rounded-[1.8rem] border border-slate-200/60 dark:border-slate-800/50 p-3 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-xl hover:shadow-purple-500/15 dark:hover:shadow-purple-500/15 hover:-translate-y-1 hover:border-purple-500/40 dark:hover:border-purple-500/40 transition-all duration-300 w-full cursor-pointer h-full">
+        class="group relative bg-violet-50 dark:bg-slate-900/60 rounded-[1.8rem] border border-slate-200 dark:border-slate-800/50 p-3 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-xl hover:shadow-purple-500/15 dark:hover:shadow-purple-500/15 hover:-translate-y-1 hover:border-purple-500/40 dark:hover:border-purple-500/40 transition-all duration-300 w-full cursor-pointer h-full">
 
         {{-- Glow Effect --}}
         <div class="absolute -inset-px bg-linear-to-r from-purple-600 to-cyan-400 rounded-[1.8rem] opacity-0 group-hover:opacity-10 transition duration-500 pointer-events-none"></div>

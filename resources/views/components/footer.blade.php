@@ -19,12 +19,12 @@
                     {{ __('تصفح الأقسام') }}
                 </h4>
                 <ul class="space-y-2.5 text-sm font-black">
-                    <li><a href="#steam" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب منصة ستيم للحاسوب') }}</a></li>
-                    <li><a href="#playstation" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب بلايستيشن') }}</a></li>
-                    <li><a href="#xbox" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب إكس بوكس') }}</a></li>
-                    <li><a href="#windows" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('اشتراكات ويندوز والبرامج') }}</a></li>
-                    <li><a href="#ai" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('اشتراكات تطبيقات (AI)') }}</a></li>
-                    <li><a href="#video-games" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('اشتراكات ألعاب الفيديو') }}</a></li>
+                    <li><a href="/#steam" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب منصة ستيم للحاسوب') }}</a></li>
+                    <li><a href="/#playstation" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب بلايستيشن') }}</a></li>
+                    <li><a href="/#xbox" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب إكس بوكس') }}</a></li>
+                    <li><a href="/#windows" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('اشتراكات ويندوز والبرامج') }}</a></li>
+                    <li><a href="/#ai" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('اشتراكات تطبيقات (AI)') }}</a></li>
+                    <li><a href="/#video-games" class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('اشتراكات ألعاب الفيديو') }}</a></li>
                 </ul>
             </div>
 
