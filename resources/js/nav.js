@@ -1,66 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('[data-nav]');
-    const sections = document.querySelectorAll('section[id], div[id]');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    let isScrolling = false;
+    let ticking = false;
 
-    // دالة تفعيل الرابط النشط
-    const setActive = (id) => {
+    const updateActiveLink = () => {
+        if (isScrolling) return;
+
+        // العثور على السكشن الذي يغطي منتصف الشاشة (تبسيط الحلقة)
+        const activeSection = sections.find(section => {
+            const { top, bottom } = section.getBoundingClientRect();
+            return top <= window.innerHeight * 0.6 && bottom >= window.innerHeight * 0.4;
+        });
+
+        // تحديث الروابط بناءً على السكشن المكتشف
         links.forEach(link => {
             const href = link.getAttribute('href');
-            const isActive = href === `#${id}`;
-
+            const isActive = activeSection && href.includes(`#${activeSection.id}`);
             link.classList.toggle('active', isActive);
         });
+
+        ticking = false;
     };
 
-    // 1. إدارة الضغط والتمرير السلس
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            
-            // نتحقق فقط من الروابط التي تستهدف سكشن (تبدأ بـ #)
-            if (href?.startsWith('#')) {
-                const targetSection = document.getElementById(href.substring(1));
-                
-                // إذا كنا في الصفحة الرئيسية والسكشن موجود
-                if (targetSection) {
-                    e.preventDefault(); // نمنع الانتقال الافتراضي
-                    targetSection.scrollIntoView({ behavior: 'smooth' }); // نمرر بسلاسة
-                    setActive(href.substring(1)); // نحدد الرابط النشط
-                    history.pushState(null, null, href); // نحدث عنوان URL بدون إعادة تحميل الصفحة
-                }
-                // إذا لم يجد السكشن (نحن في صفحة أخرى)، 
-                // لا نفعل شيئاً ونترك المتصفح يفتح الرابط بشكل طبيعي.
-            }
-        });
-    });
-
-    // 2. الـ Scroll Spy الذكي
-    const observerOptions = {
-        root: null,
-        rootMargin: '-49% 0px -49% 0px', 
-        threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setActive(entry.target.id);
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        const hasMatchingLink = Array.from(links).some(link => link.getAttribute('href') === `#${section.id}`);
-        if (hasMatchingLink) {
-            observer.observe(section);
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateActiveLink);
+            ticking = true;
         }
     });
 
-    // 3. إدارة التحميل الأولي
-    if (!window.location.hash) {
-        const homeLink = document.querySelector('[href="/"]') || document.querySelector('[href="#home"]');
-        homeLink?.classList.add('active');
-    } else {
-        setActive(window.location.hash.substring(1));
-    }
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href')?.split('#')[1];
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                isScrolling = true;
+                
+                // تحديث الـ Active فوراً
+                links.forEach(l => l.classList.toggle('active', l === link));
+                
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, null, `#${targetId}`);
+
+                setTimeout(() => { isScrolling = false; }, 800);
+            }
+        });
+    });
 });
