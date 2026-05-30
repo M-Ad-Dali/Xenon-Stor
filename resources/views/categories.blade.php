@@ -25,7 +25,6 @@
                 {{-- PRODUCTS --}}
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
 
-                    {{-- عنوان القسم --}}
                     <div class="mb-6 text-center col-span-full">
                         <h2 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white">
                             <span x-text="categoryTitle"></span>
