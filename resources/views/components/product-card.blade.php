@@ -131,7 +131,7 @@
                 <div class="flex items-center justify-between pt-3.5 border-t border-slate-100 dark:border-slate-800/60 mt-1">
                     <div class="flex flex-col">
                         @if (!empty($oldPrice))
-                            <span class="text-[10px] font-bold text-slate-400 dark:text-slate-500 line-through mb-0.5">
+                            <span class="text-[14px] font-bold text-slate-600 dark:text-slate-500 line-through mb-0.5">
                                 {{ $oldPrice }}
                             </span>
                         @endif
