@@ -61,11 +61,7 @@
                 @foreach ($cards as $card)
                     <a href="{{ route('categories.index', ['category' => $card['id']]) }}"
                         class="{{ $baseCard }} hover:border-brand-purple/50 dark:hover:border-brand-purple/60 hover:shadow-[0_0_25px_var(--brand-color)]"
-                        @click="
-                        activeCategory = '{{ $card['id'] }}';
-                        categoryTitle = '{{ $card['title'] }}';
-                        "
-                        :class="activeCategory === '{{ $card['id'] }}' ? 'is-active' : ''"
+                        :class="$data.activeCategory === '{{ $card['id'] }}' ? 'is-active' : ''"
                         style="--brand-color: {{ $card['color'] }}; --tw-shadow-color: {{ $card['color'] }};">
 
                         <div class="relative flex items-center justify-center flex-1 w-full min-h-60px">
