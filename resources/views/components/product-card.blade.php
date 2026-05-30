@@ -51,7 +51,7 @@
                 {{ $title }}
             </h3>
 
-            <p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium line-clamp-2 mb-2.5 leading-relaxed">
+            <p class="text-[10px] text-slate-700 dark:text-slate-400 font-medium line-clamp-2 mb-2.5 leading-relaxed">
                 {{ $description }}
             </p>
 
@@ -59,7 +59,7 @@
             <div class="flex items-center justify-between mt-auto pt-2 border-t border-slate-100 dark:border-slate-800/40 gap-1.5">
                 <div class="flex flex-col shrink-0">
                     @if (!empty($oldPrice))
-                        <span class="text-[9px] font-bold text-slate-400 dark:text-slate-500 line-through leading-none mb-0.5">
+                        <span class="text-[12px] font-bold text-slate-600 dark:text-slate-500 line-through leading-none mb-0.5">
                             {{ $oldPrice }}
                         </span>
                     @endif
@@ -122,7 +122,7 @@
                     <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-white mb-2 font-orbitron">
                         {{ $title }}
                     </h2>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed bg-slate-50 dark:bg-slate-950/40 p-3 rounded-xl border border-slate-100 dark:border-slate-800/40">
+                    <p class="text-xs text-slate-800 dark:text-slate-400 font-medium leading-relaxed bg-slate-50 dark:bg-slate-950/40 p-3 rounded-xl border border-slate-100 dark:border-slate-800/40">
                         {{ $description }}
                     </p>
                 </div>
