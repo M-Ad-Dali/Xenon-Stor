@@ -5,7 +5,6 @@
         }" class="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
         <div class="max-w-7xl mx-auto">
 
-            {{-- 1. رأس الصفحة --}}
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span
                     class="text-xs font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest bg-purple-50 dark:bg-purple-950/40 px-3 py-1.5 rounded-full inline-block mb-3 border border-purple-100 dark:border-purple-900/30">
@@ -20,6 +19,7 @@
                 </h1>
             </div>
 
+            {{-- SERVICES CATEGORY --}}
             <x-section-services />
 
                 {{-- PRODUCTS --}}
@@ -47,6 +47,7 @@
                         <div x-show="activeCategory === 'ALL' || activeCategory === '{{ $prod['category_id'] }}'"
                             x-transition class="w-full">
 
+                            {{-- PRODUCTS CARD --}}
                             <x-product-card />
                         </div>
                     @endforeach
