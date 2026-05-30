@@ -53,7 +53,7 @@
 
     </div>
 
-    <div class="bg-violet-50">
+    <div class="bg-violet-50 dark:bg-slate-950">
         <x-footer />
     </div>
 

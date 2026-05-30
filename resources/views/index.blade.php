@@ -9,7 +9,7 @@
     </section>
 
     {{-- SERVICES & PLATFORMS SECTION --}}
-    <section class="bg-violet-50">
+    <section class="bg-violet-50 dark:bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {{-- العنوان --}}
@@ -24,7 +24,7 @@
     </section>
 
     {{-- PLAYSTATION SECTION --}}
-    <section class="bg-white/80 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-white/80 dark:bg-slate-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <x-section-header id="gaming" :title="__('متجر الاشتراكات والألعاب')" :description="__('شحن فوري وآمن لجميع بطاقات الألعاب المفضلة لديك وبأرخص الأسعار.')" />
             <x-section-games id="steam" :title="__('العاب منصة ستيم للحاسوب')" :hasProducts="false" />
             <x-section-games id="playstation" :title="__('العاب بلايستيشن')" :hasProducts="true" />
