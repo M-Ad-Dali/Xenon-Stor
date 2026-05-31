@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     const updateActiveLink = () => {
+        // إذا كنا في صفحة فرعية (مثل المتجر)، نتوقف عن الرصد التلقائي
+        if (window.location.pathname !== '/' && window.location.pathname !== '/index.php') return;
         if (isScrolling) return;
 
-        // العثور على السكشن الذي يغطي منتصف الشاشة (تبسيط الحلقة)
+        // العثور على السكشن الذي يغطي منتصف الشاشة
         const activeSection = sections.find(section => {
             const { top, bottom } = section.getBoundingClientRect();
             return top <= window.innerHeight * 0.6 && bottom >= window.innerHeight * 0.4;
@@ -16,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // تحديث الروابط بناءً على السكشن المكتشف
         links.forEach(link => {
             const href = link.getAttribute('href');
-            const isActive = activeSection && href.includes(`#${activeSection.id}`);
+            // التأكد من أن الرابط يحتوي على الـ ID الخاص بالسكشن النشط
+            const isActive = activeSection && href && href.includes(`#${activeSection.id}`);
             link.classList.toggle('active', isActive);
         });
 
@@ -32,7 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href')?.split('#')[1];
+            const href = link.getAttribute('href');
+            // إذا كان الرابط لا يحتوي على #، دعه يعمل كرابط عادي (مثلاً في صفحة الاقسام)
+            if (!href || !href.includes('#')) return;
+
+            const targetId = href.split('#')[1];
             const targetSection = document.getElementById(targetId);
             
             if (targetSection) {
