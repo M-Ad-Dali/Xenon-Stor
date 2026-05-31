@@ -3,7 +3,7 @@
         activeCategory: '{{ request('category', 'ALL') }}',
         categoryTitle: '{{ request('category') ? 'نتائج القسم المختار' : 'جميع الأقسام' }}'
         }"
-        class="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 py-12">
+        class="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
         <div class="max-w-7xl mx-auto">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
