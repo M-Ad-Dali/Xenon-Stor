@@ -20,6 +20,9 @@
                     {{ __('تصفح الأقسام') }}
                 </h4>
                 <ul class="space-y-2.5 text-sm font-black">
+                    <li><a href="/#offers"
+                            class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العروض') }}</a>
+                    </li>
                     <li><a href="/#steam"
                             class="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ __('العاب منصة ستيم للحاسوب') }}</a>
                     </li>
