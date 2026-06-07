@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"
     class="scroll-smooth" x-data="{
         darkMode: false,
+        open: window.innerWidth >= 1024,
         init() {
             const theme = localStorage.getItem('theme');
             this.darkMode = theme ?
@@ -18,38 +19,37 @@
 
     <title>{{ config('app.name', 'XenonStor') }}</title>
 
+    {{-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
     {{-- Preconnect --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    {{-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@700&display=swap"
-        rel="stylesheet">
 
     {{-- Swiper --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    {{-- Alpine --}}
+    {{-- Alpine & Scripts --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body
-    class="font-cairo antialiased bg-white/80 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500"
-    x-cloak>
+<body class="font-cairo antialiased bg-white/80 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500" x-cloak>
 
-    <div class="min-h-screen flex flex-col justify-between">
+    <div class="min-h-screen flex flex-col">
 
         {{-- Navigation --}}
         @include('components.navigation')
 
-        {{-- Main Content --}}
-        <main class="flex-1 w-full">
-            {{ $slot }}
-        </main>
+        {{-- الحاوية الجديدة: تضم السلايدر والمحتوى أسفل الناف بار --}}
+        <div class="flex flex-1 overflow-hidden">
+
+            {{-- Main Content --}}
+            <main class="flex-1 w-full overflow-y-auto transition-all duration-300 ease-in-out">
+                {{ $slot }}
+            </main>
+        </div>
 
     </div>
 
@@ -58,5 +58,4 @@
     </div>
 
 </body>
-
 </html>
