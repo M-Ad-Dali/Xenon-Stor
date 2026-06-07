@@ -36,9 +36,9 @@
                         class="py-2.5 bg-slate-800 text-white rounded-xl hover:bg-slate-700 active:scale-95 transition-all">
                         {{ __('دخول') }}
                     </a>
-                    <a href=""
+                    <a href="{{ route('dashboard') }}"
                         class="py-2.5 bg-purple-600 text-white rounded-xl shadow-md shadow-purple-500/20 hover:bg-purple-700 active:scale-95 transition-all">
-                        {{ __('حساب جديد') }}
+                        {{ __('لوحة التحكم') }}
                     </a>
                 </div>
             @endauth
