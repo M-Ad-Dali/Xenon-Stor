@@ -150,7 +150,7 @@
 
             {{-- المحتوى الداخلي للسلايد --}}
             <div class="container mx-auto px-6 text-center z-10">
-                <h2 class="text-5xl md:text-7xl font-orbitron font-black mb-8 px-1">
+                <h2 class="text-4xl md:text-7xl font-orbitron font-black mb-8 px-1">
                     {!! $slide['title'] !!}
                 </h2>
 
