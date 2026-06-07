@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }"
-    class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/20 dark:border-slate-800/50 sticky top-0 z-50 w-full">
+    class="bg-violet-50 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/20 dark:border-slate-800/50 sticky top-0 z-100 w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 sm:h-20">
 
@@ -64,7 +64,7 @@
         @foreach ([
         'services' => __('الخدمات الرقمية'),
         'gaming' => __('الألعاب'),
-            ] as $id => $label)
+        ] as $id => $label)
             {{-- (/#services) وإذاكتنفيصفحةفرعيةيضع(#services)اذاكانالرابطيشيرالىالصفحةالرئيسية --}}
             <a href="{{ request()->is('/') ? '#' . $id : '/' . '#' . $id }}" data-nav
                 class="nav-link py-3.5 text-center text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 active:scale-98 transition-all">
