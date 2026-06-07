@@ -2,9 +2,9 @@
 
     <section class="relative bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500">
         {{-- HOME SLIDER --}}
-        <x-home-slider>
-            <x-home-carousel />
-        </x-home-slider>
+        <x-swiper>
+            <x-swiper-carousel />
+        </x-swiper>
     </section>
 
     {{-- SERVICES & PLATFORMS SECTION --}}
