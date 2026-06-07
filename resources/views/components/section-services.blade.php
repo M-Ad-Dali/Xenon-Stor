@@ -9,18 +9,32 @@
 
     $cards = [
         [
+            'id' => 'all-products',
+            'title' => __('جميع المنتجات'),
+            'sub_title' => 'ALL',
+            'url' => asset('images/categories/all-prod.svg'),
+            'color' => '#c764ab',
+        ],
+        [
+            'id' => 'offers',
+            'title' => __('العروض'),
+            'sub_title' => 'OFFERS',
+            'url' => asset('images/categories/offers.svg'),
+            'color' => '#a5cbf0',
+        ],
+        [
             'id' => 'steam',
             'title' => __('العاب منصة ستيم للحاسوب'),
             'sub_title' => 'STEAM',
             'url' => asset('images/categories/steam.svg'),
-            'color' => '#00ADEF',
+            'color' => '#c44a2c',
         ],
         [
             'id' => 'playstation',
             'title' => __('العاب بلايستيشن'),
             'sub_title' => 'PLAYSTATION',
             'url' => asset('images/categories/playstation.svg'),
-            'color' => '#006FCD',
+            'color' => '#e8eaf0',
         ],
         [
             'id' => 'xbox',
@@ -30,25 +44,25 @@
             'color' => '#107C10',
         ],
         [
-            'id' => 'windows',
+            'id' => 'premium',
             'title' => __('اشتراكات ويندوز والبرامج'),
             'sub_title' => 'WINDOWS & SOFTWARE',
             'url' => asset('images/categories/windows.svg'),
-            'color' => '#0078D4',
+            'color' => '#ff8904',
         ],
         [
             'id' => 'ai',
             'title' => __('اشتراكات تطبيقات (AI)'),
             'sub_title' => 'AI APPS',
             'url' => asset('images/categories/ai.svg'),
-            'color' => '#10A37F',
+            'color' => '#75d1a5',
         ],
         [
-            'id' => 'video-games',
-            'title' => __('اشتراكات ألعاب الفيديو'),
-            'sub_title' => 'GAME PASS',
-            'url' => asset('images/categories/game-pass.svg'),
-            'color' => '#0F856C',
+            'id' => 'entertainment',
+            'title' => __('اشتراكات نيتفليكس ويوتيوب بريميوم وشاهد'),
+            'sub_title' => 'Entertainment Department',
+            'url' => asset('images/categories/entertainment.svg'),
+            'color' => '#a85045',
         ],
     ];
 @endphp
@@ -56,7 +70,7 @@
     <section class="justify-center transition-colors duration-500 scroll-mt-20">
         <div id="servic" class="container mx-auto px-6 w-full">
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 max-w-6xl mx-auto justify-center py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 max-w-6xl mx-auto justify-center py-16 lg:p-30">
 
                 @foreach ($cards as $card)
                     <a href="{{ route('categories.index', ['category' => $card['id']]) }}"
