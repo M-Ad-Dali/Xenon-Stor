@@ -1,5 +1,5 @@
 //
 import './nav';
-import './home-slider';
+import './swiper';
 import './theme-toggle';
 import './theem';
