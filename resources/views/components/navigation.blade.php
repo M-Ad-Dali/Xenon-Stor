@@ -20,6 +20,11 @@
                     <x-nav-link href="{{ request()->is('/') ? '#gaming' : '/#gaming' }}" data-nav class="nav-link">
                         {{ __('الألعاب') }}
                     </x-nav-link>
+
+                    {{-- الرابط الجديد --}}
+                    <x-nav-link href="{{ route('dashboard') }}" class="nav-link">
+                        {{ __('لوحة التحكم') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -64,9 +69,16 @@
         @foreach ([
         'services' => __('الخدمات الرقمية'),
         'gaming' => __('الألعاب'),
+<<<<<<< HEAD
         ] as $id => $label)
             {{-- (/#services) وإذاكتنفيصفحةفرعيةيضع(#services)اذاكانالرابطيشيرالىالصفحةالرئيسية --}}
             <a href="{{ request()->is('/') ? '#' . $id : '/' . '#' . $id }}" data-nav
+=======
+        'dashboard' => __('لوحة التحكم'),
+        ] as $id => $label)
+            <a href="{{ $id === 'dashboard' ? route('dashboard') : (request()->is('/') ? '#' . $id : '/' . '#' . $id) }}"
+                {{ $id !== 'dashboard' ? 'data-nav' : '' }}
+>>>>>>> a9fc0fe90658d61d58c7925538b06bfe32b9a201
                 class="nav-link py-3.5 text-center text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 active:scale-98 transition-all">
                 {{ $label }}
             </a>
