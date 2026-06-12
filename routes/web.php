@@ -20,15 +20,19 @@ Route::get('lang/{locale}', function ($locale) {
 });
 
 Route::get('/categories', function () {
-    return view('categories'); // اسم ملف الـ Blade الذي أنشأناه
+    return view('categories');
 })->name('categories.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/orders', function () {
+    return view('orders');
+})->name('orders');
+
 Route::get('/login', function () {
-    return view('auth.login'); // تأكد من وجود ملف العرض هذا
+    return view('auth.login');
 })->name('login');
 
 Route::get('/register', function () {
