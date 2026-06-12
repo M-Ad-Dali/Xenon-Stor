@@ -51,7 +51,7 @@
             <thead class="bg-slate-50 dark:bg-slate-950/50 text-slate-500 text-xs uppercase tracking-wider">
                 <tr>
                     <th class="px-6 py-4 font-semibold">{{ __('رقم الطلب') }}</th>
-                    <th class="px-6 py-4 font-semibold">{{ __('العميل') }}</th>
+                    <th class="px-6 py-4 font-semibold">{{ __('ااسم العميل') }}</th>
                     <th class="px-6 py-4 font-semibold">{{ __('الدولة') }}</th>
                     <th class="px-6 py-4 font-semibold">{{ __('التاريخ') }}</th>
                     <th class="px-6 py-4 font-semibold">{{ __('المبلغ') }}</th>
