@@ -32,10 +32,19 @@
     display: none !important;
 }
 
+/* Scrollbar */
+* {
+    scrollbar-width: none; /* لـ Firefox */
+    -ms-overflow-style: none; /* لـ IE/Edge */
+}
+*::-webkit-scrollbar {
+    display: none; /* لـ Chrome/Safari/Opera */
+}
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
+
 
 /* ===== Swiper ===== */
 .swiper-pagination-bullet {
