@@ -1,26 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('[data-nav]');
-    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const sections = document.querySelectorAll('section[id]');
     let isScrolling = false;
     let ticking = false;
 
-    const updateActiveLink = () => {
-        // إذا كنا في صفحة فرعية (مثل المتجر)، نتوقف عن الرصد التلقائي
-        if (window.location.pathname !== '/' && window.location.pathname !== '/index.php') return;
-        if (isScrolling) return;
+    // اختصار التحقق من الصفحة الرئيسية
+    const isHomepage = () => /^\/(en|ar)?\/?(index\.php)?$/.test(window.location.pathname);
 
-        // العثور على السكشن الذي يغطي منتصف الشاشة
-        const activeSection = sections.find(section => {
-            const { top, bottom } = section.getBoundingClientRect();
+    const updateActiveLink = () => {
+        if (!isHomepage() || isScrolling) return;
+
+        // تحديد السكشن النشط باستخدام findIndex لاختصار الكود
+        const activeIdx = Array.from(sections).findIndex(s => {
+            const { top, bottom } = s.getBoundingClientRect();
             return top <= window.innerHeight * 0.6 && bottom >= window.innerHeight * 0.4;
         });
 
-        // تحديث الروابط بناءً على السكشن المكتشف
+        const activeId = activeIdx !== -1 ? `#${sections[activeIdx].id}` : null;
+
         links.forEach(link => {
             const href = link.getAttribute('href');
-            // التأكد من أن الرابط يحتوي على الـ ID الخاص بالسكشن النشط
-            const isActive = activeSection && href && href.includes(`#${activeSection.id}`);
-            link.classList.toggle('active', isActive);
+            link.classList.toggle('active', activeId && href.endsWith(activeId));
         });
 
         ticking = false;
@@ -36,19 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            // إذا كان الرابط لا يحتوي على #، دعه يعمل كرابط عادي (مثلاً في صفحة الاقسام)
-            if (!href || !href.includes('#')) return;
-
-            const targetId = href.split('#')[1];
-            const targetSection = document.getElementById(targetId);
+            const targetId = href?.split('#').pop();
+            const targetSection = targetId ? document.getElementById(targetId) : null;
             
             if (targetSection) {
                 e.preventDefault();
                 isScrolling = true;
                 
-                // تحديث الـ Active فوراً
                 links.forEach(l => l.classList.toggle('active', l === link));
-                
                 targetSection.scrollIntoView({ behavior: 'smooth' });
                 history.pushState(null, null, `#${targetId}`);
 
