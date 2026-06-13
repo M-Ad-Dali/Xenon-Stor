@@ -5,10 +5,10 @@
         statusFilter: 'all',
         dateFilter: 'newest',
         orders: [
-            { id: '#1001', customer: 'محمد عبدالله', country: 'السعودية', date: '2026-06-07', amount: '$250', status: 'completed' },
-            { id: '#1002', customer: 'أحمد علي', country: 'مصر', date: '2026-06-05', amount: '$120', status: 'pending' },
-            { id: '#1003', customer: 'سارة خالد', country: 'الإمارات', date: '2026-06-10', amount: '$450', status: 'cancelled' },
-            { id: '#1004', customer: 'خالد يوسف', country: 'الكويت', date: '2026-06-01', amount: '$300', status: 'completed' }
+            { id: '#1001', customer: 'محمد عبدالله', email: 'mohammed@example.com', country: 'السعودية', date: '2026-06-07', amount: '$250', status: 'completed' },
+            { id: '#1002', customer: 'أحمد علي', email: 'ahmed@example.com', country: 'مصر', date: '2026-06-05', amount: '$120', status: 'pending' },
+            { id: '#1003', customer: 'سارة خالد', email: 'sara@example.com', country: 'الإمارات', date: '2026-06-10', amount: '$450', status: 'cancelled' },
+            { id: '#1004', customer: 'خالد يوسف', email: 'khaled@example.com', country: 'الكويت', date: '2026-06-01', amount: '$300', status: 'completed' }
         ],
         get filteredOrders() {
             let filtered = [...this.orders];
@@ -49,20 +49,22 @@
     <div class="overflow-x-auto [&::-webkit-scrollbar]:hidden">
         <table class="w-full text-right border-collapse">
             <thead class="bg-slate-50 dark:bg-slate-950/50 text-slate-500 text-xs uppercase tracking-wider">
-                <tr>
-                    <th class="px-6 py-4 font-semibold">{{ __('رقم الطلب') }}</th>
-                    <th class="px-6 py-4 font-semibold">{{ __('ااسم العميل') }}</th>
-                    <th class="px-6 py-4 font-semibold">{{ __('الدولة') }}</th>
-                    <th class="px-6 py-4 font-semibold">{{ __('التاريخ') }}</th>
-                    <th class="px-6 py-4 font-semibold">{{ __('المبلغ') }}</th>
-                    <th class="px-6 py-4 font-semibold text-center">{{ __('الحالة') }}</th>
+                <tr class="text-center">
+                    <th class="px-2 py-4 font-semibold">{{ __('رقم الطلب') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('ااسم العميل') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('البريد الإلكتروني') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('الدولة') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('التاريخ') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('المبلغ') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('الحالة') }}</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
                 <template x-for="order in filteredOrders" :key="order.id">
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors text-center">
                         <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white whitespace-nowrap" x-text="order.id"></td>
                         <td class="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap" x-text="order.customer"></td>
+                        <td class="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap" x-text="order.email"></td>
                         <td class="px-6 py-4 text-sm text-slate-500 whitespace-nowrap" x-text="order.country"></td>
                         <td class="px-6 py-4 text-sm text-slate-500 whitespace-nowrap" x-text="order.date"></td>
                         <td class="px-6 py-4 text-sm text-slate-900 dark:text-white font-bold whitespace-nowrap" x-text="order.amount"></td>
