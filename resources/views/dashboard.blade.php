@@ -15,10 +15,10 @@
                     <p class="text-slate-500 dark:text-slate-400 mt-1">{{ __('نظرة عامة على أداء مبيعاتك اليوم') }}</p>
                 </div>
                 <div class="flex gap-2">
-                    <button
-                        class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-purple-600/20 cursor-pointer">
+                    <a href="{{ route('products.create') }}"
+                        class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-purple-600/20 cursor-pointer text-center">
                         + {{ __('إضافة منتج') }}
-                    </button>
+                    </a>
                 </div>
             </div>
 
