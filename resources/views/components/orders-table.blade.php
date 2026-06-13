@@ -25,14 +25,15 @@
     }">
 
     {{-- الهيدر --}}
-    <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-start">
+    <div
+        class="p-6 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-start">
         <h2 class="font-bold text-lg text-slate-900 dark:text-white w-full sm:w-auto">
             {{ request()->routeIs('orders') ? __('جميع الطلبات') : __('أحدث الطلبات') }}
         </h2>
 
         <div class="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-center sm:justify-end">
             @if ($showFilter)
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-6 px-2">
                     <x-status-filter />
                     <x-date-filter />
                 </div>
@@ -62,20 +63,24 @@
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
                 <template x-for="order in filteredOrders" :key="order.id">
                     <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors text-center">
-                        <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white whitespace-nowrap" x-text="order.id"></td>
-                        <td class="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap" x-text="order.customer"></td>
-                        <td class="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap" x-text="order.email"></td>
+                        <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white whitespace-nowrap"
+                            x-text="order.id"></td>
+                        <td class="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap"
+                            x-text="order.customer"></td>
+                        <td class="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap"
+                            x-text="order.email"></td>
                         <td class="px-6 py-4 text-sm text-slate-500 whitespace-nowrap" x-text="order.country"></td>
                         <td class="px-6 py-4 text-sm text-slate-500 whitespace-nowrap" x-text="order.date"></td>
-                        <td class="px-6 py-4 text-sm text-slate-900 dark:text-white font-bold whitespace-nowrap" x-text="order.amount"></td>
+                        <td class="px-6 py-4 text-sm text-slate-900 dark:text-white font-bold whitespace-nowrap"
+                            x-text="order.amount"></td>
                         <td class="px-6 py-4 flex justify-center items-center">
                             <span x-text="order.status"
                                 class="inline-block w-28 text-center px-3 py-1.5 rounded-full text-xs font-bold"
                                 :class="order.status === 'completed' ?
                                     'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
                                     (order.status === 'pending' ?
-                                    'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
-                                    'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400')">
+                                        'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
+                                        'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400')">
                             </span>
                         </td>
                     </tr>

@@ -35,17 +35,50 @@
                 {{-- جدول أحدث الطلبات --}}
                 <x-orders-table />
 
-                {{-- قائمة المنتجات الأكثر مبيعاً --}}
-                <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6">
-                    <h2 class="font-bold text-lg text-slate-900 dark:text-white mb-6">{{ __('الأكثر مبيعاً') }}</h2>
+                {{-- قائمة المنتجات الأكثر او لاقل مبيعاً --}}
+                <div x-data="{ sort: 'highest', open: false }"
+                    class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6">
+
+                    {{-- الهيدر مع قائمة الترتيب --}}
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="font-bold text-lg text-slate-900 dark:text-white">{{ __('الأكثر مبيعاً') }}</h2>
+
+                        <div class="relative">
+                            <button @click="open = !open" @click.outside="open = false"
+                                class="flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-purple-600 transition-colors cursor-pointer">
+                                <span
+                                    x-text="sort === 'highest' ? '{{ __('الأكثر مبيعاً') }}' : '{{ __('الأقل مبيعاً') }}'"></span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+
+                            {{-- القائمة المنسدلة --}}
+                            <div x-show="open" x-transition x-cloak
+                                class="absolute left-0 mt-2 w-32 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 p-1 z-10">
+                                <button @click="sort = 'highest'; open = false"
+                                    class="w-full text-center px-3 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg cursor-pointer">{{ __('الأكثر مبيعاً') }}</button>
+                                <button @click="sort = 'lowest'; open = false"
+                                    class="w-full text-center px-3 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg cursor-pointer">{{ __('الأقل مبيعاً') }}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- قائمة المنتجات --}}
                     <div class="space-y-6">
                         @for ($i = 0; $i < 4; $i++)
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl"></div>
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl group-hover:scale-105 transition-transform">
+                                </div>
                                 <div>
                                     <h4 class="text-sm font-bold text-slate-900 dark:text-white">
                                         {{ __('اسم المنتج ' . $i + 1) }}</h4>
-                                    <p class="text-xs text-slate-500">{{ __('150 عملية بيع') }}</p>
+                                    <p class="text-xs text-slate-500 font-medium">
+                                        <span
+                                            x-text="sort === 'highest' ? '150 {{ __('عملية بيع') }}' : '5 {{ __('عمليات بيع') }}'"></span>
+                                    </p>
                                 </div>
                             </div>
                         @endfor

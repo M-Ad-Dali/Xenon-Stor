@@ -79,6 +79,7 @@
     "الطلبات الجديدة": "New Orders",
     "المنتجات النشطة": "Active Products",
     "العملاء الجدد": "New Customers",
+
     "أحدث الطلبات": "Latest Orders",
     "ااسم العميل": "Customer Name",
     "البريد الإلكتروني": "Email Address",
@@ -86,12 +87,6 @@
     "الدولة": "Country",
     "التاريخ": "Date",
     "المبلغ": "Amount",
-    "الحالة": "Status",
-    "مكتمل": "Completed",
-    "الأكثر مبيعاً": "Best Selling",
-    "اسم المنتج": "Product Name",
-    "عملية بيع": "Sales",
-    "لوحة التحكم": "Dashboard",
     "الطلبات": "Orders",
     "إدارة ومتابعة طلبات العملاء بشكل فعال": "Effectively manage and track customer orders",
     "المتجر": "Store",
@@ -103,6 +98,15 @@
     "ملغاة": "Cancelled",
     "الأحدث": "Latest",
     "الأقدم": "Oldest",
+    "الحالة": "Status",
+    "مكتمل": "Completed",
+
+    "الأكثر مبيعاً": "Best Selling",
+    "الأقل مبيعاً": "Worst Selling",
+    "اسم المنتج": "Product Name",
+    "عملية بيع": "Sales",
+    "لوحة التحكم": "Dashboard",
+    
 
 
     "المنتجات": "Products",
