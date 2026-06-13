@@ -31,6 +31,14 @@ Route::get('/orders', function () {
     return view('orders');
 })->name('orders');
 
+Route::get('/products/create', function () {
+    return view('products.create');
+})->name('products.create');
+
+Route::post('/products', function (Illuminate\Http\Request $request) {
+    dd($request->all());
+})->name('products.store');
+
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
