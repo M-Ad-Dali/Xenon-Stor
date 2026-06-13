@@ -114,6 +114,16 @@
     "العملاء": "Customers",
     "النظام": "System",
     "الإعدادات العامة": "General Settings",
-    "المستخدمون": "Users"
+    "المستخدمون": "Users",
+
+    "إضافة منتج رقمي جديد": "Add New Digital Product",
+    "املأ البيانات أدناه لإضافة منتجك الجديد للمتجر": "Fill in the details below to add your new product to the store",
+    "أدخل اسم المنتج...": "Enter product name...",
+    "وصف المنتج": "Product Description",
+    "اكتب وصفاً مفصلاً للمنتج...": "Write a detailed description of the product...",
+    "صورة المنتج": "Product Image",
+    "السعر": "Price",
+    "الخصم": "Discount",
+    "حفظ المنتج": "Save Product"
 
 }
