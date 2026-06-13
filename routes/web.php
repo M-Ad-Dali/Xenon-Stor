@@ -20,7 +20,7 @@ Route::get('lang/{locale}', function ($locale) {
 });
 
 Route::get('/categories', function () {
-    return view('categories');
+    return view('categories.index');
 })->name('categories.index');
 
 Route::get('/dashboard', function () {
@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/orders', function () {
-    return view('orders');
+    return view('orders.index');
 })->name('orders');
 
 Route::get('/products/create', function () {
