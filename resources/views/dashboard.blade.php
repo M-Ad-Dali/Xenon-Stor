@@ -14,12 +14,7 @@
                     <h1 class="text-3xl font-black text-slate-900 dark:text-white">{{ __('لوحة تحكم') }}</h1>
                     <p class="text-slate-500 dark:text-slate-400 mt-1">{{ __('نظرة عامة على أداء مبيعاتك اليوم') }}</p>
                 </div>
-                <div class="flex gap-2">
-                    <a href="{{ route('products.create') }}"
-                        class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-purple-600/20 cursor-pointer text-center">
-                        + {{ __('إضافة منتج') }}
-                    </a>
-                </div>
+                <x-btn-create-products />
             </div>
 
             {{-- كروت الإحصائيات - 4 كروت --}}
@@ -56,7 +51,7 @@
 
                             {{-- القائمة المنسدلة --}}
                             <div x-show="open" x-transition x-cloak
-                                class="absolute left-0 mt-2 w-32 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 p-1 z-10">
+                                class="absolute left-0 mt-2 w-28 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 p-1 z-10">
                                 <button @click="sort = 'highest'; open = false"
                                     class="w-full text-center px-3 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg cursor-pointer">{{ __('الأكثر مبيعاً') }}</button>
                                 <button @click="sort = 'lowest'; open = false"
