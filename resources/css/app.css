@@ -43,6 +43,7 @@
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -77,9 +78,57 @@ html {
     border-radius: 999px;
 }
 
-/* Active State */
-.is-active {
-            transform: translateY(-6px);
-            box-shadow: 0 0 25px var(--brand-color);
-            border-color: var(--brand-color);
-        }
+/* Start Css Calendar */
+@media (max-width: 640px) {
+    .flatpickr-calendar {
+        left: 7% !important; 
+        right: 15% !important;
+        width: 82% !important;
+    }
+}
+
+/* 2. دعم الثيم الليلي للتقويم */
+.dark .flatpickr-calendar {
+    background: #0f172a !important;  /* لون slate-900 */
+    border: 1px solid #1e293b !important; /* لون border-slate-800 */
+    color: #e2e8f0 !important;
+    max-width: 95vw !important; /* لا يتجاوز 95% من عرض الشاشة */
+    box-sizing: border-box !important;
+}
+
+.dark .flatpickr-month, 
+.dark .flatpickr-current-month, 
+.dark .flatpickr-weekdays, 
+.dark .flatpickr-weekday {
+    color: #f8fafc !important;
+}
+
+.dark .flatpickr-day {
+    color: #cbd5e1 !important;
+}
+.dark .flatpickr-day:hover{
+    background: #9333ea !important; /* لون بنفسجي متناسق */
+    color: white !important;
+}
+
+.dark .flatpickr-day.selected {
+    background: #9333ea !important; /* لون بنفسجي متناسق */
+    color: white !important;
+}
+
+/* تنسيق حقل الوقت داخل التقويم */
+.dark .flatpickr-time input {
+    color: white !important;
+    background: transparent !important; /* لون slate-800 */
+}
+/* إجبار البلايس هولدر على الظهور دائماً في حقول التاريخ */
+.flatpickr-input::placeholder {
+    color: #94a3b8 !important; /* لون slate-400 */
+    opacity: 1 !important;
+}
+
+/* حل مشكلة اختفاء النص عند التحويل بين الثيمات */
+.flatpickr-input:focus::placeholder {
+    color: #64748b !important; /* لون أغمق قليلاً عند التركيز */
+}
+/* End Css Calendar */

@@ -122,8 +122,14 @@
     "اكتب وصفاً مفصلاً للمنتج...": "Write a detailed description of the product...",
     "صورة المنتج": "Product Image",
     "السعر": "Price",
-    "الخصم": "Discount",
+    "السعر قبل الخصم": "Old Price",
     "حفظ المنتج": "Save Product",
+
+    "تفعيل العروض لهذا المنتج": "Enable offers for this product",
+    "عنوان العرض": "Offer Title",
+    "مثال: عرض الصيف": "Example: Summer Sale",
+    "تاريخ ووقت البدء": "Start Date and Time",
+    "تاريخ ووقت الانتهاء": "End Date and Time",
 
     "قائمة المنتجات": "Product List",
     "تحكم في منتجات متجرك، التعديل والحذف": "Manage your store products, edit and delete",
