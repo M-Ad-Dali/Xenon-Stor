@@ -38,7 +38,6 @@
     "الخدمات الرقمية": "Digital Services",
     "نوفر لكم أفضل الخدمات الرقمية واشتراكات البرامج بأعلى معايير الجودة.": "We provide you with the best digital services and software subscriptions with the highest quality standards.",
     "جميع المنتجات": "All Products",
-    "جميع": "Offers",
     "اشتراكات ويندوز والبرامج": "Windows & Software Subscriptions",
     "اشتراكات تطبيقات (AI)": "AI Apps Subscriptions",
     "العاب منصة ستيم للحاسوب": "Steam PC Games",
@@ -88,6 +87,7 @@
     "التاريخ": "Date",
     "المبلغ": "Amount",
     "الطلبات": "Orders",
+    "بحث عن الطلبات...": "Search For a Orders...",
     "إدارة ومتابعة طلبات العملاء بشكل فعال": "Effectively manage and track customer orders",
     "المتجر": "Store",
     "جميع الطلبات": "All Orders",
@@ -119,11 +119,22 @@
     "إضافة منتج رقمي جديد": "Add New Digital Product",
     "املأ البيانات أدناه لإضافة منتجك الجديد للمتجر": "Fill in the details below to add your new product to the store",
     "أدخل اسم المنتج...": "Enter product name...",
+    "اختر القسم المناسب": "Select the appropriate category",
     "وصف المنتج": "Product Description",
     "اكتب وصفاً مفصلاً للمنتج...": "Write a detailed description of the product...",
     "صورة المنتج": "Product Image",
     "السعر": "Price",
     "الخصم": "Discount",
-    "حفظ المنتج": "Save Product"
+    "حفظ المنتج": "Save Product",
+
+    "قائمة المنتجات": "Product List",
+    "تحكم في منتجات متجرك، التعديل والحذف": "Manage your store products, edit and delete",
+    "ابحث عن منتج...": "Search For a Product...",
+    "ستيم": "Steam",
+    "بلايستيشن": "Playstation",
+    "اكس بوكس": "Xbox",
+    "اشتراكات بريميم": "Premium Subscriptions",
+    "AI اشتراكات": "AI Subscriptions",
+    "اشترامات الترفيه": "Entertainment Subscriptions"
 
 }
