@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="flex min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300" x-data="{ open: window.innerWidth >= 1024 }">
+    <div class="flex min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
         <x-sidebar x-bind:open="open" />
 
         <main class="flex-1 w-full overflow-hidden">
@@ -17,8 +17,8 @@
                             </p>
                         </div>
                         
-                        <div class="flex items-center gap-3">
-                            <x-search-input placeholder="{{ __('ابحث عن طلب...') }}" />
+                        <div class=" w-full sm:w-1/2 lg:w-1/3">
+                            <x-search-input placeholder="{{ __('بحث عن الطلبات...') }}" />
                         </div>
                     </div>
 
