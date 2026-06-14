@@ -99,7 +99,7 @@
                         {{-- أزرار التحكم --}}
                         <div
                             class="absolute top-4 right-4 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <a href="#"
+                            <a href="{{ route('products.create') }}"
                                 class="p-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur text-blue-600 rounded-lg shadow-lg hover:scale-110 transition-transform cursor-pointer">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
