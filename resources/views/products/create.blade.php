@@ -33,11 +33,30 @@
                                         class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white transition-all"
                                         placeholder="{{ __('أدخل اسم المنتج...') }}">
                                 </div>
+
+                                {{-- حقل اختيار القسم --}}
                                 <div>
                                     <label
-                                        class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">{{ __('وصف المنتج') }}</label>
+                                        class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">{{ __('التصنيفات') }}</label>
+                                    <select name="category_id"
+                                        class="w-full h-13 py-2 bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white transition-all cursor-pointer">
+                                        <option value="">{{ __('اختر القسم المناسب') }}</option>
+                                        <option value="offers">{{ __('العروض') }}</option>
+                                        <option value="steam">{{ __('ستيم') }}</option>
+                                        <option value="playstation">{{ __('بلايستيشن') }}</option>
+                                        <option value="xbox">{{ __('اكس بوكس') }}</option>
+                                        <option value="premium">{{ __('اشتراكات بريميم') }}</option>
+                                        <option value="ai">{{ __('AI اشتراكات') }}</option>
+                                        <option value="entertainment">{{ __('اشترامات الترفيه') }}</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">
+                                        {{ __('وصف المنتج') }}
+                                    </label>
                                     <textarea name="description" rows="8"
-                                        class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white transition-all"
+                                        class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all"
                                         placeholder="{{ __('اكتب وصفاً مفصلاً للمنتج...') }}"></textarea>
                                 </div>
                             </div>
@@ -59,18 +78,24 @@
                                 startY: 0,
                                 initialDist: 0,
                                 initialScale: 1,
-                                reset() { this.x = 0;
+                                reset() {
+                                    this.x = 0;
                                     this.y = 0;
-                                    this.scale = 1; },
+                                    this.scale = 1;
+                                },
                                 getDist(e) { return Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); },
                                 handleStart(e) {
                                     this.dragging = true;
                                     this.isDragging = false;
                                     let clientX = e.touches ? e.touches[0].clientX : e.clientX;
                                     let clientY = e.touches ? e.touches[0].clientY : e.clientY;
-                                    if (e.touches?.length === 2) { this.initialDist = this.getDist(e);
-                                        this.initialScale = this.scale; } else { this.startX = clientX - this.x;
-                                        this.startY = clientY - this.y; }
+                                    if (e.touches?.length === 2) {
+                                        this.initialDist = this.getDist(e);
+                                        this.initialScale = this.scale;
+                                    } else {
+                                        this.startX = clientX - this.x;
+                                        this.startY = clientY - this.y;
+                                    }
                                 },
                                 handleMove(e) {
                                     if (!this.dragging) return;
@@ -78,8 +103,10 @@
                                     this.isDragging = true;
                                     let clientX = e.touches ? e.touches[0].clientX : e.clientX;
                                     let clientY = e.touches ? e.touches[0].clientY : e.clientY;
-                                    if (e.touches?.length === 2) { this.scale = this.initialScale * (this.getDist(e) / this.initialDist); } else { this.x = clientX - this.startX;
-                                        this.y = clientY - this.startY; }
+                                    if (e.touches?.length === 2) { this.scale = this.initialScale * (this.getDist(e) / this.initialDist); } else {
+                                        this.x = clientX - this.startX;
+                                        this.y = clientY - this.startY;
+                                    }
                                 }
                             }">
 
@@ -143,7 +170,8 @@
                                     </button>
                                     <button type="button" @click.stop="reset()"
                                         class="p-2 bg-red-50 text-red-500 rounded-lg hover:bg-red-100 transition-colors cursor-pointer">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
                                             </path>

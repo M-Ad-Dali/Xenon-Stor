@@ -39,6 +39,10 @@ Route::post('/products', function (Illuminate\Http\Request $request) {
     dd($request->all());
 })->name('products.store');
 
+Route::get('/products/index', function () {
+    return view('products.index');
+})->name('products.index');
+
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
