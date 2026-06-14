@@ -20,7 +20,8 @@
     <title>{{ config('app.name', 'XenonStor') }}</title>
 
     {{-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@700&display=swap"
+        rel="stylesheet">
 
     {{-- Preconnect --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +29,12 @@
 
     {{-- Swiper --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    {{-- Flatpickr --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    {{-- Swiper js --}}
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     {{-- Alpine & Scripts --}}
@@ -35,7 +42,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-cairo antialiased bg-white/80 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500" x-cloak>
+<body
+    class="font-cairo antialiased bg-white/80 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500"
+    x-cloak>
 
     <div class="min-h-screen flex flex-col">
 
@@ -58,4 +67,5 @@
     </div>
 
 </body>
+
 </html>
