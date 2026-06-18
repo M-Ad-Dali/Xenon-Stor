@@ -5,8 +5,8 @@
             (object) [
                 'id' => 1,
                 'name' => 'سماعات احترافية RGB',
-                'price' => '$250',
-                'oldPrice' => '$300',
+                'price' => 250,
+                'oldPrice' => 300,
                 'image_url' => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500',
                 'category' => (object) ['name' => 'إلكترونيات'],
                 'description' => 'سماعات رأس لاسلكية مع إضاءة محيطية ونظام عزل ضوضاء متطور.',
@@ -14,7 +14,7 @@
             (object) [
                 'id' => 2,
                 'name' => 'لوحة مفاتيح ميكانيكية',
-                'price' => '$120',
+                'price' => 120,
                 'oldPrice' => '',
                 'image_url' => 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500',
                 'category' => (object) ['name' => 'ألعاب'],
@@ -23,8 +23,8 @@
             (object) [
                 'id' => 3,
                 'name' => 'ساعة ذكية رياضية',
-                'price' => '$150',
-                'oldPrice' => '$250',
+                'price' => 150,
+                'oldPrice' => 250,
                 'image_url' => 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500',
                 'category' => (object) ['name' => 'إكسسوارات'],
                 'description' => 'تتبع نبضات القلب والنشاط البدني مع تصميم مقاوم للماء.',
@@ -32,8 +32,8 @@
             (object) [
                 'id' => 4,
                 'name' => 'كاميرا تصوير 4K',
-                'price' => '$899',
-                'oldPrice' => '$1200',
+                'price' => 899,
+                'oldPrice' => 1200,
                 'image_url' => 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500',
                 'category' => (object) ['name' => 'تصوير'],
                 'description' => 'كاميرا احترافية بدقة 4K مع عدسة قابلة للتغيير.',

@@ -40,7 +40,6 @@
                                     <select name="category_id"
                                         class="w-full h-13 py-2 bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white transition-all cursor-pointer">
                                         <option value="">{{ __('اختر القسم المناسب') }}</option>
-                                        <option value="offers">{{ __('العروض') }}</option>
                                         <option value="steam">{{ __('ستيم') }}</option>
                                         <option value="playstation">{{ __('بلايستيشن') }}</option>
                                         <option value="xbox">{{ __('اكس بوكس') }}</option>
@@ -59,22 +58,31 @@
                                         placeholder="{{ __('اكتب وصفاً مفصلاً للمنتج...') }}"></textarea>
                                 </div>
 
-                                <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label
-                                            class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">{{ __('السعر') }}</label>
-                                        <input type="number" name="price"
-                                            value="{{ old('price', $product->price ?? '') }}"
-                                            class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white"
-                                            placeholder="0.00">
+                                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">
+                                            {{ __('السعر') }}
+                                        </label>
+                                        <div class="relative">
+                                            <input type="number" name="price"
+                                                value="{{ old('price', $product->price ?? '') }}"
+                                                class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 ps-12 pe-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white"
+                                                placeholder="0.00">
+                                            <span class="absolute start-4 top-4 text-slate-400 font-bold">$</span>
+                                        </div>
                                     </div>
+
                                     <div>
-                                        <label
-                                            class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">{{ __('السعر قبل الخصم') }}</label>
-                                        <input type="number" name="discount"
-                                            value="{{ old('discount', $product->discount ?? '') }}"
-                                            class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white"
-                                            placeholder="0%">
+                                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">
+                                            {{ __('السعر قبل الخصم') }}
+                                        </label>
+                                        <div class="relative">
+                                            <input type="number" name="discount"
+                                                value="{{ old('discount', $product->discount ?? '') }}"
+                                                class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 ps-12 pe-4 text-sm focus:ring-2 focus:ring-purple-500 dark:text-white"
+                                                placeholder="0.00">
+                                            <span class="absolute start-4 top-4 text-slate-400 font-bold">$</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
