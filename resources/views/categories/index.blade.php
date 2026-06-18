@@ -39,7 +39,7 @@
                         ['category_id' => 'xbox'],
                         ['category_id' => 'windows'],
                         ['category_id' => 'ai'],
-                        ['category_id' => 'video-games'],
+                        ['category_id' => 'entertainment'],
                     ];
                 @endphp
 

@@ -78,6 +78,13 @@ html {
     border-radius: 999px;
 }
 
+/* Active State */
+.is-active {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px var(--brand-color);
+            border-color: var(--brand-color);
+        }
+
 /* Start Css Calendar */
 @media (max-width: 640px) {
     .flatpickr-calendar {
