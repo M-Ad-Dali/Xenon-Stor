@@ -31,6 +31,13 @@ Route::get('/orders', function () {
     return view('orders.index');
 })->name('orders');
 
+Route::get('/orders/{id}', function ($id) {
+    // يمكنك هنا جلب بيانات الطلب من قاعدة البيانات باستخدام الـ id
+    // $order = \App\Models\Order::findOrFail($id);
+    
+    return view('orders.show', ['id' => $id]); 
+})->name('orders.show');
+
 Route::get('/products/create', function () {
     return view('products.create');
 })->name('products.create');
