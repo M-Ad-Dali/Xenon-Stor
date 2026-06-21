@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     <div class="flex min-h-screen bg-slate-50 dark:bg-slate-950">
         <x-sidebar />
 
@@ -8,11 +9,11 @@
                 {{-- 1. الهيدر (العلامة التجارية ورقم الفاتورة) --}}
                 <header class="flex justify-between items-start mb-12">
                     <div>
-                        <span class="font-orbitron text-2xl font-bold text-purple-600 dark:text-purple-400">XENON<span class="text-slate-900 dark:text-white">STOR</span></span>
+                        <span class="font-orbitron lg:text-4xl sm:text-3xl text-xl font-bold text-purple-600 dark:text-purple-400">XENON<span class="text-slate-900 dark:text-white">STOR</span></span>
                         <p class="text-slate-400 text-sm">المتجر الرقمي الحديث</p>
                     </div>
                     <div class="text-center">
-                        <h1 class="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">فاتورة</h1>
+                        <h1 class="lg:text-4xl sm:text-3xl text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight">فاتورة</h1>
                         <p class="text-indigo-600 font-bold mt-1">#{{ $id ?? '0000' }}</p>
                     </div>
                 </header>
@@ -67,10 +68,6 @@
 
     {{-- تنسيق الطباعة (معزول لضمان نظافة الكود) --}}
     <style>
-        @media print {
-            body * { visibility: hidden; }
-            #invoice, #invoice * { visibility: visible; }
-            #invoice { position: absolute; left: 0; top: 0; width: 100%; }
-        }
+        
     </style>
-</x-app-layout>
+@endsection

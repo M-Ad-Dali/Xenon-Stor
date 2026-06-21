@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     <div x-data="{
         activeCategory: '{{ request('category', 'ALL') }}',
         categoryTitle: '{{ request('category') ? 'نتائج القسم المختار' : 'جميع الأقسام' }}'
@@ -56,4 +57,4 @@
 
         </div>
     </div>
-</x-app-layout>
+@endsection

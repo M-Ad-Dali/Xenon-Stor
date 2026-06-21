@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
 
     <section class="relative bg-stone-100/80 dark:bg-slate-950 transition-colors duration-500">
         {{-- HOME SLIDER --}}
@@ -34,4 +35,4 @@
             <x-section-games id="entertainment" :title="__('اشتراكات نيتفليكس ويوتيوب بريميوم وشاهد')" :hasProducts="true" />
     </section>
 
-</x-app-layout>
+@endsection

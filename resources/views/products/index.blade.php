@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     {{-- تعريف البيانات المؤقتة مباشرة في الصفحة --}}
     @php
         $products = [
@@ -126,4 +127,4 @@
             </div>
         </main>
     </div>
-</x-app-layout>
+@endsection

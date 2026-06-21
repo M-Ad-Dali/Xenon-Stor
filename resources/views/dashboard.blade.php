@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     {{-- الحاوية الرئيسية: استخدام flex لضمان بقاء السايد بار بجانب المحتوى --}}
     <div class="flex min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
 
@@ -90,4 +91,4 @@
             </div>
         </main>
     </div>
-</x-app-layout>
+@endsection
