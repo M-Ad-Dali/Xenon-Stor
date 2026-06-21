@@ -46,7 +46,6 @@ html {
     overflow-x: hidden;
 }
 
-
 /* ===== Swiper ===== */
 .swiper-pagination-bullet {
     background: var(--color-brand-purple) !important;
@@ -80,15 +79,15 @@ html {
 
 /* Active State */
 .is-active {
-            transform: translateY(-6px);
-            box-shadow: 0 0 25px var(--brand-color);
-            border-color: var(--brand-color);
-        }
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px var(--brand-color);
+    border-color: var(--brand-color);
+}
 
 /* Start Css Calendar */
 @media (max-width: 640px) {
     .flatpickr-calendar {
-        left: 7% !important; 
+        left: 7% !important;
         right: 15% !important;
         width: 82% !important;
     }
@@ -96,16 +95,16 @@ html {
 
 /* 2. دعم الثيم الليلي للتقويم */
 .dark .flatpickr-calendar {
-    background: #0f172a !important;  /* لون slate-900 */
+    background: #0f172a !important; /* لون slate-900 */
     border: 1px solid #1e293b !important; /* لون border-slate-800 */
     color: #e2e8f0 !important;
     max-width: 95vw !important; /* لا يتجاوز 95% من عرض الشاشة */
     box-sizing: border-box !important;
 }
 
-.dark .flatpickr-month, 
-.dark .flatpickr-current-month, 
-.dark .flatpickr-weekdays, 
+.dark .flatpickr-month,
+.dark .flatpickr-current-month,
+.dark .flatpickr-weekdays,
 .dark .flatpickr-weekday {
     color: #f8fafc !important;
 }
@@ -113,7 +112,7 @@ html {
 .dark .flatpickr-day {
     color: #cbd5e1 !important;
 }
-.dark .flatpickr-day:hover{
+.dark .flatpickr-day:hover {
     background: #9333ea !important; /* لون بنفسجي متناسق */
     color: white !important;
 }
@@ -139,3 +138,21 @@ html {
     color: #64748b !important; /* لون أغمق قليلاً عند التركيز */
 }
 /* End Css Calendar */
+
+/* Start Print Styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #invoice,
+    #invoice * {
+        visibility: visible;
+    }
+    #invoice {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+/* End Print Styles */
