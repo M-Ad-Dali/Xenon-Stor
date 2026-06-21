@@ -56,7 +56,7 @@
 
             {{-- Main Content --}}
             <main class="flex-1 w-full overflow-y-auto transition-all duration-300 ease-in-out">
-                {{ $slot }}
+                @yield('content')
             </main>
         </div>
 
