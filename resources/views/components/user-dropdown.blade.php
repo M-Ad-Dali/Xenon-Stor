@@ -32,7 +32,7 @@
             @else
                 <h3 class="text-brand-purple font-black text-lg mb-4">{{ __('مرحباً بك!') }}</h3>
                 <div class="flex flex-col gap-2 font-bold text-xs text-center">
-                    <a href=""
+                    <a href="{{ route('login') }}"
                         class="py-2.5 bg-slate-800 text-white rounded-xl hover:bg-slate-700 active:scale-95 transition-all">
                         {{ __('دخول') }}
                     </a>
