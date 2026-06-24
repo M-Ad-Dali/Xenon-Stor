@@ -67,33 +67,33 @@
     ];
 @endphp
 
-    <section class="justify-center transition-colors duration-500 scroll-mt-20">
-        <div id="servic" class="container mx-auto px-6 w-full">
+<section class="justify-center transition-colors duration-500 scroll-mt-20">
+    <div id="servic" class="container mx-auto px-6 w-full">
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 max-w-6xl mx-auto justify-center py-16 lg:p-30">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 max-w-6xl mx-auto justify-center py-16 lg:p-30">
 
-                @foreach ($cards as $card)
+            @foreach ($cards as $card)
                     <a href="{{ route('categories.index', ['category' => $card['id']]) }}"
-                        class="{{ $baseCard }} hover:border-brand-purple/50 dark:hover:border-brand-purple/60 hover:shadow-[0_0_25px_var(--brand-color)]"
+                    class="{{ $baseCard }} hover:border-brand-purple/50 dark:hover:border-brand-purple/60 hover:shadow-[0_0_25px_var(--brand-color)]"
                         :class="$data.activeCategory === '{{ $card['id'] }}' ? 'is-active' : ''"
-                        style="--brand-color: {{ $card['color'] }}; --tw-shadow-color: {{ $card['color'] }};">
+                    style="--brand-color: {{ $card['color'] }}; --tw-shadow-color: {{ $card['color'] }};">
 
-                        <div class="relative flex items-center justify-center flex-1 w-full min-h-60px">
-                            <div class="absolute w-18 h-18 rounded-2xl border border-white/10 dark:border-white/5 shadow-inner"
-                                style="background-color: {{ $card['color'] }}20;">
-                            </div>
-                            <img src="{{ $card['url'] }}" alt="{{ $card['sub_title'] }}"
-                                class="relative z-10 w-11 h-11 object-contain opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_12px_var(--brand-color)]">
+                    <div class="relative flex items-center justify-center flex-1 w-full min-h-60px">
+                        <div class="absolute w-18 h-18 rounded-2xl border border-white/10 dark:border-white/5 shadow-inner"
+                            style="background-color: {{ $card['color'] }}20;">
                         </div>
-                        <div class="w-full mt-2">
-                            <p class="text-[11px] font-bold text-slate-700 dark:text-slate-300 line-clamp-1 mb-0.5">
-                                {{ $card['title'] }}</p>
-                            <span class="{{ $baseSpan }}">{{ $card['sub_title'] }}</span>
-                        </div>
-                    </a>
-                @endforeach
-
-            </div>
+                        <img src="{{ $card['url'] }}" alt="{{ $card['sub_title'] }}"
+                            class="relative z-10 w-11 h-11 object-contain opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_12px_var(--brand-color)]">
+                    </div>
+                    <div class="w-full mt-2">
+                        <p class="text-[11px] font-bold text-slate-700 dark:text-slate-300 line-clamp-1 mb-0.5">
+                            {{ $card['title'] }}</p>
+                        <span class="{{ $baseSpan }}">{{ $card['sub_title'] }}</span>
+                    </div>
+                </a>
+            @endforeach
 
         </div>
-    </section>
+
+    </div>
+</section>

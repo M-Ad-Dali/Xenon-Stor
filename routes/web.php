@@ -1,64 +1,40 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\DashboardController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
+// تفعيل اللغة للمسارات
+Route::middleware(['language'])->group(function () {
+    
+    Route::get('/', function () { return view('index'); })->name('home');
+    Route::get('/categories', function () { return view('categories.index'); })->name('categories.index');
+    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+    Route::get('/cart', function () { return view('cart.index'); })->name('cart');
 
-Route::get('/', function () {
-    return view('index');
+    // الطلبات
+    Route::get('/orders', function () { return view('orders.index'); })->name('orders');
+    Route::get('/orders/{id}', function ($id) { return view('orders.show', ['id' => $id]); })->name('orders.show');
+
+    // العملاء
+    Route::get('/customers', function () { return view('customers.index'); })->name('customers.index');
+    
+    // المنتجات
+    Route::get('/products/create', function () { return view('products.create'); })->name('products.create');
+    Route::post('/products', function (Request $request) { dd($request->all()); })->name('products.store');
+    Route::get('/products/index', function () { return view('products.index'); })->name('products.index');
+    
+    // المصادقة
+    Route::get('/login', function () { return view('auth.login'); })->name('login');
+    Route::get('/register', function () { return view('auth.register'); })->name('register');
+    Route::post('/logout', function () { Auth::logout(); return redirect('/'); })->name('logout');
 });
 
+// مسار تغيير اللغة
 Route::get('lang/{locale}', function ($locale) {
     if (in_array($locale, ['ar', 'en'])) {
-        Session::put('locale', $locale);
+        session(['locale' => $locale]);
     }
-    return redirect()->back();
-});
-
-Route::get('/categories', function () {
-    return view('categories.index');
-})->name('categories.index');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-Route::get('/orders', function () {
-    return view('orders.index');
-})->name('orders');
-
-Route::get('/orders/{id}', function ($id) {
-    // يمكنك هنا جلب بيانات الطلب من قاعدة البيانات باستخدام الـ id
-    // $order = \App\Models\Order::findOrFail($id);
-    
-    return view('orders.show', ['id' => $id]); 
-})->name('orders.show');
-
-Route::get('/products/create', function () {
-    return view('products.create');
-})->name('products.create');
-
-Route::post('/products', function (Illuminate\Http\Request $request) {
-    dd($request->all());
-})->name('products.store');
-
-Route::get('/products/index', function () {
-    return view('products.index');
-})->name('products.index');
-
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
-Route::post('/logout', function () {
-    Auth::logout();
-    return redirect('/');
-})->name('logout');
+    // العودة للرابط السابق مع تغيير المعامل ?lang=
+    return redirect(url()->previous() . '?lang=' . $locale);
+})->name('lang.switch');

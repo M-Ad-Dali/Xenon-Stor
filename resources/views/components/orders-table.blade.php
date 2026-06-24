@@ -53,12 +53,12 @@
     </div>
 
     {{-- الجدول --}}
-    <div class="overflow-x-auto [&::-webkit-scrollbar]:hidden">
+    <div class="overflow-x-auto">
         <table class="w-full text-right border-collapse">
             <thead class="bg-slate-50 dark:bg-slate-950/50 text-slate-500 text-xs uppercase tracking-wider">
                 <tr class="text-center">
                     <th class="px-2 py-4 font-semibold">{{ __('رقم الطلب') }}</th>
-                    <th class="px-2 py-4 font-semibold">{{ __('ااسم العميل') }}</th>
+                    <th class="px-2 py-4 font-semibold">{{ __('اسم العميل') }}</th>
                     <th class="px-2 py-4 font-semibold">{{ __('البريد الإلكتروني') }}</th>
                     <th class="px-2 py-4 font-semibold">{{ __('الدولة') }}</th>
                     <th class="px-2 py-4 font-semibold">{{ __('التاريخ') }}</th>

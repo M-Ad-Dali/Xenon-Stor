@@ -82,7 +82,7 @@
                     class="block text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 rtl:text-right ltr:text-left">
                     {{ __('اللغة') }}
                 </label>
-                <a href="{{ url('lang/' . (app()->getLocale() == 'ar' ? 'en' : 'ar')) }}"
+                <a href="{{ request()->fullUrlWithQuery(['lang' => app()->getLocale() == 'ar' ? 'en' : 'ar']) }}"
                     class="relative w-full h-11 bg-slate-100 dark:bg-slate-800/60 rounded-xl p-1 flex items-center border border-slate-200/60 dark:border-slate-700/50 hover:border-purple-500/30 transition-colors group/lang">
 
                     <div
