@@ -42,7 +42,7 @@
                     </x-button-auth>
 
                     <div class="text-center pt-2">
-                        <a href="#"
+                        <a href="{{ route('password.request') }}"
                             class="text-xs text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                             {{ __('هل نسيت كلمة المرور؟') }}
                         </a>
