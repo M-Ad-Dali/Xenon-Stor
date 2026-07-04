@@ -28,6 +28,45 @@ Route::middleware(['language'])->group(function () {
     Route::get('/login', function () { return view('auth.login'); })->name('login');
     Route::get('/register', function () { return view('auth.register'); })->name('register');
     Route::post('/logout', function () { Auth::logout(); return redirect('/'); })->name('logout');
+
+
+    Route::get('/verify-email', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
+
+    // مسار إعادة إرسال الرابط
+    // مسار التحقق من الكود (POST)
+    Route::post('/verify-code', function (Request $request) {
+        // هنا مستقبلاً ستضع منطق التحقق من الكود
+        // مؤقتاً: سنقوم بتحويل المستخدم لصفحة تعيين كلمة المرور
+        // سنمرر 'token' وهمي لتجربة الصفحة
+        return redirect()->route('password.reset', ['token' => 'test-token']);
+    })->name('verification.verify');
+
+    // صفحة طلب استعادة كلمة المرور
+    Route::get('/forgot-password', function () {
+        return view('auth.passwords.forgot');
+    })->name('password.request');
+
+    // مسار التحقق من الكود (المسار الجديد)
+    Route::get('/verify-code', function () {
+        return view('auth.verify-email'); 
+    })->name('verification.code');
+
+    // صفحة إدخال كلمة المرور الجديدة (عرض فقط)
+    Route::get('/reset-password/{token}', function ($token) {
+        return view('auth.passwords.reset', ['token' => $token]);
+    })->name('password.reset');
+
+    // تعديل المسار ليقوم بالتحويل لصفحة الكود
+    Route::post('/forgot-password', function () {
+        return redirect()->route('verification.code');
+    })->name('password.email');
+
+    // لكي لا يظهر خطأ Route [password.update] not defined
+    Route::post('/reset-password', function () {
+        return back()->with('status', 'تم التحديث (تجريبي)');
+    })->name('password.update');
 });
 
 // مسار تغيير اللغة
@@ -35,6 +74,5 @@ Route::get('lang/{locale}', function ($locale) {
     if (in_array($locale, ['ar', 'en'])) {
         session(['locale' => $locale]);
     }
-    // العودة للرابط السابق مع تغيير المعامل ?lang=
     return redirect(url()->previous() . '?lang=' . $locale);
 })->name('lang.switch');
